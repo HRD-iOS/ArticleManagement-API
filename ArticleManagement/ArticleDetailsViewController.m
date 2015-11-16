@@ -8,6 +8,7 @@
 
 #import "ArticleDetailsViewController.h"
 #import "ImageViewController.h"
+#import "EditArticleViewController.h"
 
 @interface ArticleDetailsViewController ()
 
@@ -42,6 +43,10 @@
 - (IBAction)showImage:(id)sender {
     [self performSegueWithIdentifier:@"segueImage" sender:_article];
 }
+- (IBAction)editDetail:(id)sender {
+    [self performSegueWithIdentifier:@"segueEditDetail" sender:_article];
+}
+
 
 
 #pragma mark - Navigation
@@ -51,6 +56,9 @@
     if([segue.identifier isEqualToString:@"segueImage"]){
         ImageViewController *imageViewController = [segue destinationViewController];
         imageViewController.article = sender;
+    }else if([segue.identifier isEqualToString:@"segueEditDetail"]){
+        EditArticleViewController *editArticle = [segue destinationViewController];
+        editArticle.article = sender;
     }
 }
 

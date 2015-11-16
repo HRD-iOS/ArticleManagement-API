@@ -7,6 +7,7 @@
 //
 
 #import "ArticleDetailsNoImageViewController.h"
+#import "EditArticleWithoutImageViewController.h"
 
 @interface ArticleDetailsNoImageViewController ()
 
@@ -35,14 +36,19 @@
     [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
-/*
+- (IBAction)editDetail:(id)sender {
+    [self performSegueWithIdentifier:@"segueEditDetailWithoutImage" sender:_article];
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"segueEditDetailWithoutImage"]){
+        EditArticleWithoutImageViewController *editArticle = [segue destinationViewController];
+        editArticle.article = sender;
+    }
 }
-*/
 
 @end

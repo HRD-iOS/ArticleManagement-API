@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Article.h"
+#import "ArticleManager.h"
 #import "ArticleDetailsViewController.h"
 #import "ArticleDetailsNoImageViewController.h"
 #import "CustomTableViewCell.h"
@@ -18,15 +19,12 @@
 
 @implementation ViewController
 
-
-NSMutableArray *articleArray;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.customTableView.delegate = self;
     self.customTableView.dataSource = self;
-  
+    if([ArticleManager sharedInstance].record.count == 0){
     Article *art1 = [[Article alloc]initWithTitle:@"Cydia Substrate ចេញ​កំណែ​ទម្រង់​ថ្មី​ហើយ ដូច្នេះ Tweak ចាស់ៗ​មួយ​ចំនួន​ធំ​អាច​ដំណើរ​ការ​លើ iOS 9" Content:@"លោក Saurik បាន​បញ្ចេញ Cydia Substrate ជំនាន់ថ្មី ហើយដើម្បីស្រប តាមតម្រូវការ អ្នកបង្កើត Tweak មួយចំនួន និងដើម្បី ទៅកែប្រព័ន្ធ ប្រតិបត្តិការ iOS 9 អោយវាអាច ដំណើរការ Tweak ចាស់ៗមួយចំនួនធំ ផងដែរ។\n\nមកទល់ពេលនេះ អ្នកអាច Update Cydia ទៅកាន់ ជំនាន់ 0.9.6110 បានហើយ​ ប្រសិនបើអ្នក មិនទាន់ Update ទេ សូមភ្ជាប់ ទៅកាន់ អ៊ីនធើណែត និង ចូលទៅ Cydia ធ្វើការ Refresh រួច Update វាជាបន្ទាន់។ រឿង Update Cydia Substrate មិនអាច អាក់ខាន បានឡើយ ព្រោះ Cydia Substrate វាជាផ្នែកមួយ ដ៏ធំ ជួយអោយ ដំណើរការ Tweak ក្រោយពេលដែល Jailbreak រួចរាល់ ប្រសិនបើ វាមានបញ្ហា វាអាច បណ្តាលអោយ ខូចប្រព័ន្ធ ប្រតិបត្តិការ របស់អ្នក ផងដែរ។\n\n យើងជឿជាក់ថា កំណែទម្រង់ Cydia Substrate ជំនាន់ថ្មីនេះ វានឹងជួយ សម្រួលការងារ ច្រើនដល់ប្រព័ន្ធ ប្រតិបត្តិការអ្នក រួមទាំង ផ្តល់ភាព ងាយស្រួលដល់ អ្នកបង្កើត Tweak ផងដែរ។ ប្រសិនបើអ្នក ចង់ព្យាយាម តម្លើង Tweak ចាស់ៗ អ្នកអាច សាកល្បងបាន តែគួរទុក ចិត្តថា Tweak នោះ វាមិន ចាស់ខ្លាំងពេក ប្រសិនបើវា ធ្លាប់ដំណើរ ការលើ iOS 8 អ្នកអាច ព្យាយាមបាន តែមាន]ការ ទទួលខុស ត្រូវដោយខ្លួនឯង។" ImagePath:@"article1.jpg"];
     
     
@@ -45,7 +43,12 @@ NSMutableArray *articleArray;
     NSDictionary *dic4 = [[NSDictionary alloc] initWithObjects:@[art4] forKeys:@[@"article"]];
     NSDictionary *dic5 = [[NSDictionary alloc] initWithObjects:@[art5] forKeys:@[@"article"]];
     
-    articleArray = [[NSMutableArray alloc]initWithObjects:dic1, dic2, dic3, dic4, dic5, nil];
+    [[ArticleManager sharedInstance].record addObject:dic1];
+    [[ArticleManager sharedInstance].record addObject:dic2];
+    [[ArticleManager sharedInstance].record addObject:dic3];
+    [[ArticleManager sharedInstance].record addObject:dic4];
+    [[ArticleManager sharedInstance].record addObject:dic5];
+    }
     
     self.refreshControl = [[UIRefreshControl alloc]init];
     self.refreshControl.backgroundColor = [UIColor colorWithRed:75/255.0f green:157/255.0f blue:78/255.0f alpha:1.0f];
@@ -58,24 +61,23 @@ NSMutableArray *articleArray;
 
 -(void)refreshData{
     
-    Article *art1 = [[Article alloc]initWithTitle:@"Cydia Substrate ចេញ​កំណែ​ទម្រង់​ថ្មី​ហើយ ដូច្នេះ Tweak ចាស់ៗ​មួយ​ចំនួន​ធំ​អាច​ដំណើរ​ការ​លើ iOS 9" Content:@"លោក Saurik បាន​បញ្ចេញ Cydia Substrate ជំនាន់ថ្មី ហើយដើម្បីស្រប តាមតម្រូវការ អ្នកបង្កើត Tweak មួយចំនួន និងដើម្បី ទៅកែប្រព័ន្ធ ប្រតិបត្តិការ iOS 9 អោយវាអាច ដំណើរការ Tweak ចាស់ៗមួយចំនួនធំ ផងដែរ។\n\n មកទល់ពេលនេះ អ្នកអាច Update Cydia ទៅកាន់ ជំនាន់ 0.9.6110 បានហើយ​ ប្រសិនបើអ្នក មិនទាន់ Update ទេ សូមភ្ជាប់ ទៅកាន់ អ៊ីនធើណែត និង ចូលទៅ Cydia ធ្វើការ Refresh រួច Update វាជាបន្ទាន់។ រឿង Update Cydia Substrate មិនអាច អាក់ខាន បានឡើយ ព្រោះ Cydia Substrate វាជាផ្នែកមួយ ដ៏ធំ ជួយអោយ ដំណើរការ Tweak ក្រោយពេលដែល Jailbreak រួចរាល់ ប្រសិនបើ វាមានបញ្ហា វាអាច បណ្តាលអោយ ខូចប្រព័ន្ធ ប្រតិបត្តិការ របស់អ្នក ផងដែរ។\n\n យើងជឿជាក់ថា កំណែទម្រង់ Cydia Substrate ជំនាន់ថ្មីនេះ វានឹងជួយ សម្រួលការងារ ច្រើនដល់ប្រព័ន្ធ ប្រតិបត្តិការអ្នក រួមទាំង ផ្តល់ភាព ងាយស្រួលដល់ អ្នកបង្កើត Tweak ផងដែរ។ ប្រសិនបើអ្នក ចង់ព្យាយាម តម្លើង Tweak ចាស់ៗ អ្នកអាច សាកល្បងបាន តែគួរទុក ចិត្តថា Tweak នោះ វាមិន ចាស់ខ្លាំងពេក ប្រសិនបើវា ធ្លាប់ដំណើរ ការលើ iOS 8 អ្នកអាច ព្យាយាមបាន តែមានការ ទទួលខុស ត្រូវដោយខ្លួនឯង។" ImagePath:@"article1.jpg"];
+//    Article *art1 = [[Article alloc]initWithTitle:@"Cydia Substrate ចេញ​កំណែ​ទម្រង់​ថ្មី​ហើយ ដូច្នេះ Tweak ចាស់ៗ​មួយ​ចំនួន​ធំ​អាច​ដំណើរ​ការ​លើ iOS 9" Content:@"លោក Saurik បាន​បញ្ចេញ Cydia Substrate ជំនាន់ថ្មី ហើយដើម្បីស្រប តាមតម្រូវការ អ្នកបង្កើត Tweak មួយចំនួន និងដើម្បី ទៅកែប្រព័ន្ធ ប្រតិបត្តិការ iOS 9 អោយវាអាច ដំណើរការ Tweak ចាស់ៗមួយចំនួនធំ ផងដែរ។\n\n មកទល់ពេលនេះ អ្នកអាច Update Cydia ទៅកាន់ ជំនាន់ 0.9.6110 បានហើយ​ ប្រសិនបើអ្នក មិនទាន់ Update ទេ សូមភ្ជាប់ ទៅកាន់ អ៊ីនធើណែត និង ចូលទៅ Cydia ធ្វើការ Refresh រួច Update វាជាបន្ទាន់។ រឿង Update Cydia Substrate មិនអាច អាក់ខាន បានឡើយ ព្រោះ Cydia Substrate វាជាផ្នែកមួយ ដ៏ធំ ជួយអោយ ដំណើរការ Tweak ក្រោយពេលដែល Jailbreak រួចរាល់ ប្រសិនបើ វាមានបញ្ហា វាអាច បណ្តាលអោយ ខូចប្រព័ន្ធ ប្រតិបត្តិការ របស់អ្នក ផងដែរ។\n\n យើងជឿជាក់ថា កំណែទម្រង់ Cydia Substrate ជំនាន់ថ្មីនេះ វានឹងជួយ សម្រួលការងារ ច្រើនដល់ប្រព័ន្ធ ប្រតិបត្តិការអ្នក រួមទាំង ផ្តល់ភាព ងាយស្រួលដល់ អ្នកបង្កើត Tweak ផងដែរ។ ប្រសិនបើអ្នក ចង់ព្យាយាម តម្លើង Tweak ចាស់ៗ អ្នកអាច សាកល្បងបាន តែគួរទុក ចិត្តថា Tweak នោះ វាមិន ចាស់ខ្លាំងពេក ប្រសិនបើវា ធ្លាប់ដំណើរ ការលើ iOS 8 អ្នកអាច ព្យាយាមបាន តែមានការ ទទួលខុស ត្រូវដោយខ្លួនឯង។" ImagePath:@"article1.jpg"];
+//    
+//    
+//    Article *art2 = [[Article alloc]initWithTitle:@"បង្កើត​ទីក្រុង ពោរ​ពេញ​ដោយ​ភាព​ស្រស់​បំព្រង​ជាមួយ​ហ្គេម​កសិដ្ឋាន​ចេញថ្មី Everytown!" Content:@"កាលពីប៉ុន្មាន សប្តាហ៍មុន ខេមបូ បាន​លើក​យក កសិដ្ឋាន​ថ្មីមួយ ដែល​មាន​ឈ្មោះ Farm Away ហើយ​វា​អាច​ដំណើរ​ការ បាន​តែ​សំរាប់ ប្រព័ន្ធ​ប្រតិបត្តិការ iOS តែប៉ុណ្ណោះ រីឯប្រព័ន្ធដទៃ ផ្សេងទៀត នៅ​ពុំ​ទាន់​អាច​ដំណើរការ បាននោះទេ។ \n\n ដោយឡែក មានហ្គេម កសិដ្ឋានមួយ ដែលទើបនឹង ចេញថ្មីដែរ មានឈ្មោះថា Everytown ប៉ុន្តែពិសេស​ជាង ដោយមានសាងសង់ ឧបករណ៍ផលិត អាហារ, ដាក់ចំណីអោយ សត្វចិញ្ចឹម, ដាំបន្លែ, រៀប​ចំ​ទីក្រុង​មួយ និងអោយមាន រចនាបថ សោភណ័ភាព ស្រស់ស្អាត និងដទៃទៀត ជាច្រើន។" ImagePath:@"article2.jpg"];
+//    
+//    
+//    Article *art3 = [[Article alloc]initWithTitle:@"រឿង Divergent ប្រភេទ​រឿង​បាញ់​ប្រហារ, អភិនីហា និង​ការ​ស្រម៉ៃ​ខ្ពស់ បាន​ចេញ​ឈុត​ខ្លី​វគ្គ​ថ្មី​ដំបូងហើយ!" Content:@"នេះជាឈុតខ្លីដំបូង ដែលជាវគ្គបន្ទាប់ របស់រឿង Divergent ដែលយើង បានដឹងថា ជារឿងបែប ស្មុគស្មាញ, បរិយាយពី ភាពប្រឌិត និងការ ស្រម៉ៃខ្ពស់ អមជាមួយ ឈុតឆាក បាញ់ប្រហារ គ្មានប្រណីដៃ។\n\nរឿង Divergent វគ្គក្រោយនេះ មានឈ្មោះថា Allegiant ដែលមានការ ចូលរួម សម្តែង ដោយ តារាល្បីៗ នៅសល់ពី វគ្គមុនៗ ដូចជា Shailene Woodley ហើយនេះ ជាវគ្គទី 3 ផងដែរ។" ImagePath:@"article3.jpg"];
+//    
+//    NSDictionary *dic1 = [[NSDictionary alloc] initWithObjects:@[art1] forKeys:@[@"article"]];
+//    NSDictionary *dic2 = [[NSDictionary alloc] initWithObjects:@[art2] forKeys:@[@"article"]];
+//    NSDictionary *dic3 = [[NSDictionary alloc] initWithObjects:@[art3] forKeys:@[@"article"]];
+//    
+//    
+//    [[ArticleManager sharedInstance].record addObject:dic1];
+//    [[ArticleManager sharedInstance].record addObject:dic2];
+//    [[ArticleManager sharedInstance].record addObject:dic3];
     
-    
-    Article *art2 = [[Article alloc]initWithTitle:@"បង្កើត​ទីក្រុង ពោរ​ពេញ​ដោយ​ភាព​ស្រស់​បំព្រង​ជាមួយ​ហ្គេម​កសិដ្ឋាន​ចេញថ្មី Everytown!" Content:@"កាលពីប៉ុន្មាន សប្តាហ៍មុន ខេមបូ បាន​លើក​យក កសិដ្ឋាន​ថ្មីមួយ ដែល​មាន​ឈ្មោះ Farm Away ហើយ​វា​អាច​ដំណើរ​ការ បាន​តែ​សំរាប់ ប្រព័ន្ធ​ប្រតិបត្តិការ iOS តែប៉ុណ្ណោះ រីឯប្រព័ន្ធដទៃ ផ្សេងទៀត នៅ​ពុំ​ទាន់​អាច​ដំណើរការ បាននោះទេ។ \n\n ដោយឡែក មានហ្គេម កសិដ្ឋានមួយ ដែលទើបនឹង ចេញថ្មីដែរ មានឈ្មោះថា Everytown ប៉ុន្តែពិសេស​ជាង ដោយមានសាងសង់ ឧបករណ៍ផលិត អាហារ, ដាក់ចំណីអោយ សត្វចិញ្ចឹម, ដាំបន្លែ, រៀប​ចំ​ទីក្រុង​មួយ និងអោយមាន រចនាបថ សោភណ័ភាព ស្រស់ស្អាត និងដទៃទៀត ជាច្រើន។" ImagePath:@"article2.jpg"];
-    
-    
-    Article *art3 = [[Article alloc]initWithTitle:@"រឿង Divergent ប្រភេទ​រឿង​បាញ់​ប្រហារ, អភិនីហា និង​ការ​ស្រម៉ៃ​ខ្ពស់ បាន​ចេញ​ឈុត​ខ្លី​វគ្គ​ថ្មី​ដំបូងហើយ!" Content:@"នេះជាឈុតខ្លីដំបូង ដែលជាវគ្គបន្ទាប់ របស់រឿង Divergent ដែលយើង បានដឹងថា ជារឿងបែប ស្មុគស្មាញ, បរិយាយពី ភាពប្រឌិត និងការ ស្រម៉ៃខ្ពស់ អមជាមួយ ឈុតឆាក បាញ់ប្រហារ គ្មានប្រណីដៃ។\n\nរឿង Divergent វគ្គក្រោយនេះ មានឈ្មោះថា Allegiant ដែលមានការ ចូលរួម សម្តែង ដោយ តារាល្បីៗ នៅសល់ពី វគ្គមុនៗ ដូចជា Shailene Woodley ហើយនេះ ជាវគ្គទី 3 ផងដែរ។" ImagePath:@"article3.jpg"];
-    
-    NSDictionary *dic1 = [[NSDictionary alloc] initWithObjects:@[art1] forKeys:@[@"article"]];
-    NSDictionary *dic2 = [[NSDictionary alloc] initWithObjects:@[art2] forKeys:@[@"article"]];
-    NSDictionary *dic3 = [[NSDictionary alloc] initWithObjects:@[art3] forKeys:@[@"article"]];
-    
-    
-    [articleArray addObject:dic1];
-    [articleArray addObject:dic2];
-    [articleArray addObject:dic3];
-    
-
     [self.customTableView reloadData];
 }
 
@@ -104,12 +106,12 @@ NSMutableArray *articleArray;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [articleArray count];
+    return [[ArticleManager sharedInstance].record  count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    Article *article = [[articleArray objectAtIndex:indexPath.row] objectForKey:@"article"];
+    Article *article = [[[ArticleManager sharedInstance].record  objectAtIndex:indexPath.row] objectForKey:@"article"];
     
     
     if([[article image] isEqual: @""]){
@@ -137,11 +139,12 @@ NSMutableArray *articleArray;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if([[[[articleArray objectAtIndex:indexPath.row] objectForKey:@"article"] image] isEqual:@""]){
-        [self performSegueWithIdentifier:@"segueArticleDetailsNoImage" sender:[[articleArray objectAtIndex:indexPath.row] objectForKey:@"article"]];
+    [ArticleManager sharedInstance].recordID = indexPath.row;
+    if([[[[[ArticleManager sharedInstance].record  objectAtIndex:indexPath.row] objectForKey:@"article"] image] isEqual:@""]){
+        [self performSegueWithIdentifier:@"segueArticleDetailsNoImage" sender:[[[ArticleManager sharedInstance].record objectAtIndex:indexPath.row] objectForKey:@"article"]];
         
     }else{
-        [self performSegueWithIdentifier:@"segueArticleDetails" sender:[[articleArray objectAtIndex:indexPath.row] objectForKey:@"article"]];
+        [self performSegueWithIdentifier:@"segueArticleDetails" sender:[[[ArticleManager sharedInstance].record  objectAtIndex:indexPath.row] objectForKey:@"article"]];
         
     }
 }

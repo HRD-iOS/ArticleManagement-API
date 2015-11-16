@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190D96401BFA2F10008BFC5E /* ArticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 190D963F1BFA2F10008BFC5E /* ArticleManager.m */; };
+		190D96431BFA3A89008BFC5E /* AddArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190D96421BFA3A89008BFC5E /* AddArticleViewController.m */; };
+		190D96471BFA5203008BFC5E /* EditArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190D96461BFA5203008BFC5E /* EditArticleViewController.m */; };
+		190D964A1BFA632B008BFC5E /* EditArticleWithoutImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190D96491BFA632B008BFC5E /* EditArticleWithoutImageViewController.m */; };
 		193F322C1BF4D30100AF5DD1 /* ArticleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193F322B1BF4D30100AF5DD1 /* ArticleDetailsViewController.m */; };
 		193F32311BF4D6BA00AF5DD1 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193F32301BF4D6BA00AF5DD1 /* ImageViewController.m */; };
 		193F32341BF4DC6F00AF5DD1 /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193F32331BF4DC6F00AF5DD1 /* CustomViewViewController.m */; };
@@ -30,6 +34,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		190D963E1BFA2F10008BFC5E /* ArticleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleManager.h; sourceTree = "<group>"; };
+		190D963F1BFA2F10008BFC5E /* ArticleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleManager.m; sourceTree = "<group>"; };
+		190D96411BFA3A89008BFC5E /* AddArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddArticleViewController.h; sourceTree = "<group>"; };
+		190D96421BFA3A89008BFC5E /* AddArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddArticleViewController.m; sourceTree = "<group>"; };
+		190D96451BFA5203008BFC5E /* EditArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditArticleViewController.h; sourceTree = "<group>"; };
+		190D96461BFA5203008BFC5E /* EditArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditArticleViewController.m; sourceTree = "<group>"; };
+		190D96481BFA632B008BFC5E /* EditArticleWithoutImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditArticleWithoutImageViewController.h; sourceTree = "<group>"; };
+		190D96491BFA632B008BFC5E /* EditArticleWithoutImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditArticleWithoutImageViewController.m; sourceTree = "<group>"; };
 		193F322A1BF4D30100AF5DD1 /* ArticleDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailsViewController.h; sourceTree = "<group>"; };
 		193F322B1BF4D30100AF5DD1 /* ArticleDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailsViewController.m; sourceTree = "<group>"; };
 		193F322F1BF4D6BA00AF5DD1 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
@@ -84,6 +96,12 @@
 				193F32331BF4DC6F00AF5DD1 /* CustomViewViewController.m */,
 				193F32351BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.h */,
 				193F32361BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.m */,
+				190D96411BFA3A89008BFC5E /* AddArticleViewController.h */,
+				190D96421BFA3A89008BFC5E /* AddArticleViewController.m */,
+				190D96451BFA5203008BFC5E /* EditArticleViewController.h */,
+				190D96461BFA5203008BFC5E /* EditArticleViewController.m */,
+				190D96481BFA632B008BFC5E /* EditArticleWithoutImageViewController.h */,
+				190D96491BFA632B008BFC5E /* EditArticleWithoutImageViewController.m */,
 			);
 			name = "Custom View Controller";
 			sourceTree = "<group>";
@@ -152,6 +170,8 @@
 			children = (
 				9A983EB71BF4229D00515550 /* Article.h */,
 				9A983EB81BF4229D00515550 /* Article.m */,
+				190D963E1BFA2F10008BFC5E /* ArticleManager.h */,
+				190D963F1BFA2F10008BFC5E /* ArticleManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -246,7 +266,11 @@
 				193F322C1BF4D30100AF5DD1 /* ArticleDetailsViewController.m in Sources */,
 				193F32371BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.m in Sources */,
 				9A983EB91BF4229D00515550 /* Article.m in Sources */,
+				190D96471BFA5203008BFC5E /* EditArticleViewController.m in Sources */,
+				190D964A1BFA632B008BFC5E /* EditArticleWithoutImageViewController.m in Sources */,
 				193F32341BF4DC6F00AF5DD1 /* CustomViewViewController.m in Sources */,
+				190D96431BFA3A89008BFC5E /* AddArticleViewController.m in Sources */,
+				190D96401BFA2F10008BFC5E /* ArticleManager.m in Sources */,
 				9A983EA81BF4222A00515550 /* ViewController.m in Sources */,
 				9A983EA51BF4222A00515550 /* AppDelegate.m in Sources */,
 				9A983EBE1BF4275B00515550 /* CustomTableViewCell.m in Sources */,
