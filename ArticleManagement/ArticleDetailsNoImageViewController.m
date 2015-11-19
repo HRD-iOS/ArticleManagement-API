@@ -7,7 +7,7 @@
 //
 
 #import "ArticleDetailsNoImageViewController.h"
-#import "EditArticleWithoutImageViewController.h"
+#import "EditArticleViewController.h"
 
 @interface ArticleDetailsNoImageViewController ()
 
@@ -40,13 +40,12 @@
     [self performSegueWithIdentifier:@"segueEditDetailWithoutImage" sender:_article];
 }
 
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"segueEditDetailWithoutImage"]){
-        EditArticleWithoutImageViewController *editArticle = [segue destinationViewController];
+        EditArticleViewController *editArticle = [segue destinationViewController];
         editArticle.article = sender;
     }
 }

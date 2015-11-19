@@ -34,8 +34,30 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)saveImageToGallery:(id)sender {
-    UIImage *image = [UIImage imageNamed:[_article image]];
-    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Save Image"
+                                          message:@"Do you want to save this image?"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
+                                   style:UIAlertActionStyleCancel
+                                   handler:nil];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action)
+                               {
+                                   UIImage *image = [UIImage imageNamed:[_article image]];
+                                   UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+                               }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 /*

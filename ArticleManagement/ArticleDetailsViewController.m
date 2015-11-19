@@ -43,6 +43,7 @@
 - (IBAction)showImage:(id)sender {
     [self performSegueWithIdentifier:@"segueImage" sender:_article];
 }
+
 - (IBAction)editDetail:(id)sender {
     [self performSegueWithIdentifier:@"segueEditDetail" sender:_article];
 }

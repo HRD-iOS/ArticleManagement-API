@@ -27,7 +27,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)saveRecord:(id)sender {
-    Article *article = [[Article alloc]initWithTitle:_textFieldTitle.text Content: _textViewContent.text ImagePath:@""];
+    Article *article = [[Article alloc]initWithTitle:_textFieldTitle.text Content: _textViewContent.text ImagePath:(self.imageView.image == nil)? @"": @"article1.jpg"];
     
     NSDictionary *dic = [[NSDictionary alloc] initWithObjects:@[article] forKeys:@[@"article"]];
     
@@ -52,8 +52,21 @@
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.imageView.image = chosenImage;
+    
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    NSString *savedImagePath = [documentsDirectory stringByAppendingPathComponent:@"savedImage.png"];
+//    NSLog(@"%@", savedImagePath);
+//    UIImage *image = chosenImage; // imageView is my image from camera
+//    NSData *imageData = UIImagePNGRepresentation(image);
+//    [imageData writeToFile:savedImagePath atomically:YES];
+   
+    
+    
+    
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
+
 /*
 #pragma mark - Navigation
 
