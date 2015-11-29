@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.scrollView.delegate = self;
-    _imageViewImage.image = [UIImage imageNamed:[self.dictionaryArticle valueForKey:@"image"]];
+    _imageViewImage.image = [self.article image];
     _scrollView.minimumZoomScale = 1.0;
     _scrollView.maximumZoomScale = 6.0;
 }
@@ -50,7 +50,7 @@
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction *action)
                                {
-                                   UIImage *image = [UIImage imageNamed:[self.dictionaryArticle valueForKey:@"image"]];
+                                   UIImage *image = [self.article image];
                                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
                                }];
     

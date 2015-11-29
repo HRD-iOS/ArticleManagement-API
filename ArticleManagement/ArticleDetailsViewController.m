@@ -18,11 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.labelTitle.text = [self.dictionaryArticle valueForKey:@"title"];
-    self.imageViewImage.image = [UIImage imageNamed:[self.dictionaryArticle valueForKey:@"image"]];
-    self.textViewContent.text =[self.dictionaryArticle valueForKey:@"description"];
-   
-      
+    self.labelTitle.text = [self.article title];
+    self.imageViewImage.image = [self.article image];
+    self.textViewContent.text =[self.article descriptions];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,11 +40,11 @@
 
 }
 - (IBAction)showImage:(id)sender {
-    [self performSegueWithIdentifier:@"segueImage" sender:self.dictionaryArticle];
+    [self performSegueWithIdentifier:@"segueImage" sender:self.article];
 }
 
 - (IBAction)editDetail:(id)sender {
-    [self performSegueWithIdentifier:@"segueEditDetail" sender:self.dictionaryArticle];
+    [self performSegueWithIdentifier:@"segueEditDetail" sender:self.article];
 }
 
 
@@ -56,10 +55,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"segueImage"]){
         ImageViewController *imageViewController = [segue destinationViewController];
-        imageViewController.dictionaryArticle = sender;
+        imageViewController.article = sender;
     }else if([segue.identifier isEqualToString:@"segueEditDetail"]){
         EditArticleViewController *editArticle = [segue destinationViewController];
-        editArticle.dictionaryArticle = sender;
+        editArticle.article = sender;
     }
 }
 

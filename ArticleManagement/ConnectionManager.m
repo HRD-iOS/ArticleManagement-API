@@ -22,10 +22,15 @@
     
     NSURL *url = [NSURL URLWithString:strURL];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url];
     
     request.HTTPMethod = @"POST";
-      [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    
     NSData *jsonObject = [NSJSONSerialization dataWithJSONObject:reqDictionary options:0 error:nil];
     
     NSString *urlString = [[NSString alloc] initWithData:jsonObject encoding:NSUTF8StringEncoding];
@@ -34,34 +39,20 @@
     
     request.HTTPBody = requestBodyData;
     
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
-    if(!connection){
-        responseData = nil;
-    }
-    [connection start];
+    NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *localfile, NSURLResponse *response, NSError *error) {
+        
+        if (!error) {
+            if ([request.URL isEqual:url] ) {
+                NSData *data = [NSData dataWithContentsOfURL:localfile];
+                responseData = [NSMutableData data];
+                [responseData appendData:data];
+                NSDictionary *dicObject = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+                
+                [self.delegate returnResult:dicObject];
+           }
+        }
+    }];
+    [task resume];
 }
 
-#pragma mark - Connection Deleage
-
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
-    [responseData appendData:data];
-    NSError *error;
-    NSDictionary *dicObject = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-    
-    [self.delegate returnResult:dicObject];
-}
-    
--(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-    responseData = [NSMutableData data];
-}
-
--(void)connectionDidFinishLoading:(NSURLConnection *)connection{
-    
-}
-
--(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-    NSLog(@"%@",error);
-}
 @end
-

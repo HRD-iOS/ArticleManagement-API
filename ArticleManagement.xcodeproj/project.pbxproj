@@ -14,6 +14,8 @@
 		193F32311BF4D6BA00AF5DD1 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193F32301BF4D6BA00AF5DD1 /* ImageViewController.m */; };
 		193F32341BF4DC6F00AF5DD1 /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193F32331BF4DC6F00AF5DD1 /* CustomViewViewController.m */; };
 		193F32371BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193F32361BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.m */; };
+		196DE8931C0B3E57007A3A34 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 196DE8921C0B3E57007A3A34 /* Article.m */; };
+		196DE8BB1C0B5F29007A3A34 /* no-images.png in Resources */ = {isa = PBXBuildFile; fileRef = 196DE8BA1C0B5F29007A3A34 /* no-images.png */; };
 		197BC3891BF6FF17003B88AE /* article1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 197BC3881BF6FF17003B88AE /* article1.jpg */; };
 		197BC38B1BF70750003B88AE /* article2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 197BC38A1BF70750003B88AE /* article2.jpg */; };
 		197BC38D1BF70842003B88AE /* article3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 197BC38C1BF70842003B88AE /* article3.jpg */; };
@@ -47,6 +49,9 @@
 		193F32331BF4DC6F00AF5DD1 /* CustomViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewViewController.m; sourceTree = "<group>"; };
 		193F32351BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailsNoImageViewController.h; sourceTree = "<group>"; };
 		193F32361BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailsNoImageViewController.m; sourceTree = "<group>"; };
+		196DE8911C0B3E57007A3A34 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		196DE8921C0B3E57007A3A34 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		196DE8BA1C0B5F29007A3A34 /* no-images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-images.png"; sourceTree = SOURCE_ROOT; };
 		197BC3881BF6FF17003B88AE /* article1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = article1.jpg; sourceTree = SOURCE_ROOT; };
 		197BC38A1BF70750003B88AE /* article2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = article2.jpg; sourceTree = SOURCE_ROOT; };
 		197BC38C1BF70842003B88AE /* article3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = article3.jpg; sourceTree = SOURCE_ROOT; };
@@ -104,6 +109,7 @@
 		9A37D41B1BF42E1B0096DCB4 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				196DE8BA1C0B5F29007A3A34 /* no-images.png */,
 				19B21EDA1BF7870400F68A57 /* share.png */,
 				197BC3941BF7144B003B88AE /* logo.jpg */,
 				197BC3901BF70921003B88AE /* article5.jpg */,
@@ -163,6 +169,8 @@
 		9A983EBA1BF422B800515550 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				196DE8911C0B3E57007A3A34 /* Article.h */,
+				196DE8921C0B3E57007A3A34 /* Article.m */,
 				190D963E1BFA2F10008BFC5E /* ArticleManager.h */,
 				190D963F1BFA2F10008BFC5E /* ArticleManager.m */,
 				198BE1341C0AA4F900A84472 /* ConnectionManager.h */,
@@ -245,6 +253,7 @@
 				197BC38D1BF70842003B88AE /* article3.jpg in Resources */,
 				9A37D41D1BF42E300096DCB4 /* ios_logo.png in Resources */,
 				197BC3911BF70921003B88AE /* article5.jpg in Resources */,
+				196DE8BB1C0B5F29007A3A34 /* no-images.png in Resources */,
 				197BC38B1BF70750003B88AE /* article2.jpg in Resources */,
 				197BC3891BF6FF17003B88AE /* article1.jpg in Resources */,
 				9A983EAB1BF4222A00515550 /* Main.storyboard in Resources */,
@@ -263,6 +272,7 @@
 				190D96471BFA5203008BFC5E /* EditArticleViewController.m in Sources */,
 				193F32341BF4DC6F00AF5DD1 /* CustomViewViewController.m in Sources */,
 				190D96431BFA3A89008BFC5E /* AddArticleViewController.m in Sources */,
+				196DE8931C0B3E57007A3A34 /* Article.m in Sources */,
 				190D96401BFA2F10008BFC5E /* ArticleManager.m in Sources */,
 				9A983EA81BF4222A00515550 /* ViewController.m in Sources */,
 				198BE1361C0AA4F900A84472 /* ConnectionManager.m in Sources */,

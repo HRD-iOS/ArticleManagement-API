@@ -14,15 +14,15 @@
 @end
 
 @implementation EditArticleViewController
-NSString *articleID;
+NSNumber *articleID;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _textFieldTitle.text=[self.dictionaryArticle valueForKey:@"title"];
-    _textViewContent.text =[self.dictionaryArticle valueForKey:@"description"];
-    _imageViewImage.image = [UIImage imageNamed:[self.dictionaryArticle valueForKey:@"image"]];
-    articleID = [self.dictionaryArticle valueForKey:@"id"];
+    _textFieldTitle.text=[self.article title];
+    _textViewContent.text =[self.article descriptions];
+    _imageViewImage.image = [self.article image];
+    articleID = [self.article articleID];
  }
 
 - (void)didReceiveMemoryWarning {

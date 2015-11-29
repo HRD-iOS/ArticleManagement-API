@@ -9,11 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
 @property (nonatomic,strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UITableView *customTableView;
-
-
-
 
 @end
 
