@@ -7,21 +7,22 @@
 //
 
 #import "EditArticleViewController.h"
+#import "ConnectionManager.h"
 
-@interface EditArticleViewController ()
+@interface EditArticleViewController ()<ConnectionManagerDelegate>
 
 @end
 
 @implementation EditArticleViewController
-UIImage *currentImage;
+NSString *articleID;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _textFieldTitle.text=[_article title];
-    _textViewContent.text =[_article content];
-    _imageViewImage.image = [UIImage imageNamed:[_article image]];
-    currentImage = [UIImage imageNamed:[_article image]];
+    _textFieldTitle.text=[self.dictionaryArticle valueForKey:@"title"];
+    _textViewContent.text =[self.dictionaryArticle valueForKey:@"description"];
+    _imageViewImage.image = [UIImage imageNamed:[self.dictionaryArticle valueForKey:@"image"]];
+    articleID = [self.dictionaryArticle valueForKey:@"id"];
  }
 
 - (void)didReceiveMemoryWarning {
@@ -29,16 +30,24 @@ UIImage *currentImage;
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)saveEditDetail:(id)sender {
+    //Create connection object
+    ConnectionManager *manager = [[ConnectionManager alloc] init];
     
-    // Compare image when save does image change or not
-    NSData *imgData1 = UIImagePNGRepresentation(currentImage);
-    NSData *imgData2 = UIImagePNGRepresentation(_imageViewImage.image);
+    //Set delegate
+    manager.delegate = self;
     
-    BOOL isCompare =  [imgData1 isEqualToData:imgData2];
+    //Create dictionary for store article detail input from user
+    NSDictionary *dictionaryObject = @{
+                                       @"id": articleID,
+                                       @"title": _textFieldTitle.text,
+                                       @"description": _textViewContent.text,
+                                       @"enable": @"true",
+                                       @"userId": @"43",
+                                       @"image": (self.imageViewImage.image == nil)? @"http://www.kshrd.com.kh/jsp/img/logo.png": @"http://www.kshrd.com.kh/jsp/img/logo.png"
+                                       };
     
-    Article *article = [[Article alloc]initWithTitle:_textFieldTitle.text Content: _textViewContent.text ImagePath:(self.imageViewImage.image == nil)? @"": (isCompare)?[_article image]: @"article1.jpg"];
-    NSDictionary *dic = [[NSDictionary alloc] initWithObjects:@[article] forKeys:@[@"article"]];
-    [[ArticleManager sharedInstance].record replaceObjectAtIndex:[ArticleManager sharedInstance].recordID withObject:dic];
+    //Send data to server and insert it
+    [manager sendTranData:dictionaryObject withKey:@"/api/article/hrd_u001"];
     
     [self performSegueWithIdentifier:@"segueSaveEditDetail" sender:nil];
 }
@@ -59,8 +68,21 @@ UIImage *currentImage;
                                   actionWithTitle:NSLocalizedString(@"Delete", @"Delete action")
                                   style:UIAlertActionStyleDestructive
                                   handler:^(UIAlertAction *action)
-                                  { 
-                                      [[ArticleManager sharedInstance].record removeObjectAtIndex:[ArticleManager sharedInstance].recordID];
+                                  {
+                                      //Create connection object
+                                      ConnectionManager *manager = [[ConnectionManager alloc] init];
+                                      
+                                      //Set delegate
+                                      manager.delegate = self;
+                                      
+                                      //Create dictionary for store article detail input from user
+                                      NSDictionary *dictionaryObject = @{
+                                                                         @"id": articleID
+                                                                         };
+                                      
+                                      //Send data to server and insert it
+                                      [manager sendTranData:dictionaryObject withKey:@"/api/article/hrd_d001"];
+                                      
                                       [self performSegueWithIdentifier:@"segueSaveEditDetail" sender:nil];
                                   }];
     
@@ -69,6 +91,12 @@ UIImage *currentImage;
     
     [self presentViewController:alertController animated:YES completion:nil];
 }
+
+
+-(void)returnResult:(NSDictionary *)result{
+    NSLog(@"+++++++++++++ %@",result);
+}
+
 
 - (IBAction)loadGallery:(id)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];

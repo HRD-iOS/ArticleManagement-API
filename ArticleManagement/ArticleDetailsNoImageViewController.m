@@ -17,8 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _labelTitle.text = [_article title];
-    _textViewContent.text = [_article content];
+    _labelTitle.text = [self.dictionaryArticle valueForKey:@"title"];
+    _textViewContent.text = [self.dictionaryArticle valueForKey:@"description"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,7 +37,7 @@
 }
 
 - (IBAction)editDetail:(id)sender {
-    [self performSegueWithIdentifier:@"segueEditDetailWithoutImage" sender:_article];
+    [self performSegueWithIdentifier:@"segueEditDetailWithoutImage" sender:self.dictionaryArticle];
 }
 
 #pragma mark - Navigation
@@ -46,7 +46,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"segueEditDetailWithoutImage"]){
         EditArticleViewController *editArticle = [segue destinationViewController];
-        editArticle.article = sender;
+        editArticle.dictionaryArticle = sender;
     }
 }
 

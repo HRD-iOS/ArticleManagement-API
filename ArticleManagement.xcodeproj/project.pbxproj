@@ -29,7 +29,6 @@
 		9A983EAB1BF4222A00515550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A983EA91BF4222A00515550 /* Main.storyboard */; };
 		9A983EAD1BF4222A00515550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A983EAC1BF4222A00515550 /* Assets.xcassets */; };
 		9A983EB01BF4222A00515550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A983EAE1BF4222A00515550 /* LaunchScreen.storyboard */; };
-		9A983EB91BF4229D00515550 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A983EB81BF4229D00515550 /* Article.m */; };
 		9A983EBE1BF4275B00515550 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A983EBD1BF4275B00515550 /* CustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -68,8 +67,6 @@
 		9A983EAC1BF4222A00515550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A983EAF1BF4222A00515550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A983EB11BF4222A00515550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A983EB71BF4229D00515550 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
-		9A983EB81BF4229D00515550 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		9A983EBC1BF4275B00515550 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		9A983EBD1BF4275B00515550 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,8 +163,6 @@
 		9A983EBA1BF422B800515550 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9A983EB71BF4229D00515550 /* Article.h */,
-				9A983EB81BF4229D00515550 /* Article.m */,
 				190D963E1BFA2F10008BFC5E /* ArticleManager.h */,
 				190D963F1BFA2F10008BFC5E /* ArticleManager.m */,
 				198BE1341C0AA4F900A84472 /* ConnectionManager.h */,
@@ -265,7 +260,6 @@
 			files = (
 				193F322C1BF4D30100AF5DD1 /* ArticleDetailsViewController.m in Sources */,
 				193F32371BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.m in Sources */,
-				9A983EB91BF4229D00515550 /* Article.m in Sources */,
 				190D96471BFA5203008BFC5E /* EditArticleViewController.m in Sources */,
 				193F32341BF4DC6F00AF5DD1 /* CustomViewViewController.m in Sources */,
 				190D96431BFA3A89008BFC5E /* AddArticleViewController.m in Sources */,

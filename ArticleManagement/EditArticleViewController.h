@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Article.h"
 #import "ArticleManager.h"
 
 @interface EditArticleViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (weak, nonatomic) Article *article;
+@property (weak, nonatomic) NSDictionary *dictionaryArticle;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldTitle;
 @property (weak, nonatomic) IBOutlet UITextView *textViewContent;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewImage;

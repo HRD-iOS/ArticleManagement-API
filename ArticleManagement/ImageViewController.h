@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Article.h"
 
 @interface ImageViewController : UIViewController<UIScrollViewDelegate>
 
-@property (strong, nonatomic) Article *article;
+@property (strong, nonatomic) NSDictionary *dictionaryArticle;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewImage;
 

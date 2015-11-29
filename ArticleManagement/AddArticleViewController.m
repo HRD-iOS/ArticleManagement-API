@@ -7,11 +7,10 @@
 //
 
 #import "AddArticleViewController.h"
-#import "Article.h"
-#import "ArticleManager.h"
+#import "ConnectionManager.h"
 
 
-@interface AddArticleViewController ()
+@interface AddArticleViewController ()<ConnectionManagerDelegate>
 
 @end
 
@@ -27,13 +26,31 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)saveRecord:(id)sender {
-    Article *article = [[Article alloc]initWithTitle:_textFieldTitle.text Content: _textViewContent.text ImagePath:(self.imageView.image == nil)? @"": @"article1.jpg"];
     
-    NSDictionary *dic = [[NSDictionary alloc] initWithObjects:@[article] forKeys:@[@"article"]];
+    //Create connection object
+    ConnectionManager *manager = [[ConnectionManager alloc] init];
     
-    [[ArticleManager sharedInstance].record addObject:dic];
+    //Set delegate
+    manager.delegate = self;
+    
+    //Create dictionary for store article detail input from user
+    NSDictionary *dictionaryObject = @{
+                                 @"title": _textFieldTitle.text,
+                                 @"description": _textViewContent.text,
+                                 @"userId": @"43",
+                                 @"image": (self.imageView.image == nil)? @"http://www.kshrd.com.kh/jsp/img/logo.png": @"http://www.kshrd.com.kh/jsp/img/logo.png"
+                                 };
+    
+    //Send data to server and insert it
+    [manager sendTranData:dictionaryObject withKey:@"/api/article/hrd_c001"];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+-(void)returnResult:(NSDictionary *)result{
+    NSLog(@"+++++++++++++ %@",result);
+}
+
 
 - (IBAction)dismissAddImageView:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
