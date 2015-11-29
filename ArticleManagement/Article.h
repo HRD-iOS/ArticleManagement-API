@@ -10,9 +10,9 @@
 
 @interface Article : NSObject
 
-@property (weak, nonatomic) NSString *title;
-@property (weak, nonatomic) NSString *content;
-@property (weak, nonatomic) NSString *image;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *content;
+@property (strong, nonatomic) NSString *image;
 
 -(id)initWithTitle:(NSString *)title Content:(NSString *)content ImagePath:(NSString *)image;
 
