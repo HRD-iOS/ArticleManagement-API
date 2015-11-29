@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ConnectionManager.h"
 #import "Article.h"
 #import "ArticleManager.h"
 #import "ArticleDetailsViewController.h"
@@ -21,6 +22,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    ConnectionManager *manager = [[ConnectionManager alloc] init];
+    
+    manager.delegate = self;
+    
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
+    [dictionary setObject:@"5" forKey:@"row"];
+    [dictionary setObject:@"1" forKey:@"pageCount"];
+    
+    [manager sendTranData:dictionary withKey:@"/api/user/hrd_r001"];
+    
     
     self.customTableView.delegate = self;
     self.customTableView.dataSource = self;
@@ -60,6 +72,9 @@
     
 }
 
+-(void)returnResult:(NSDictionary *)result{
+    NSLog(@"+++++++++++++ %@",result);
+}
 
 -(void)refreshData{
     

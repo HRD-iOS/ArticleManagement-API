@@ -20,6 +20,7 @@
 		197BC38F1BF708AA003B88AE /* article4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 197BC38E1BF708AA003B88AE /* article4.jpg */; };
 		197BC3911BF70921003B88AE /* article5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 197BC3901BF70921003B88AE /* article5.jpg */; };
 		197BC3951BF7144B003B88AE /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 197BC3941BF7144B003B88AE /* logo.jpg */; };
+		198BE1361C0AA4F900A84472 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 198BE1351C0AA4F900A84472 /* ConnectionManager.m */; };
 		19B21EDB1BF7870400F68A57 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 19B21EDA1BF7870400F68A57 /* share.png */; };
 		9A37D41D1BF42E300096DCB4 /* ios_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A37D41C1BF42E300096DCB4 /* ios_logo.png */; };
 		9A983EA21BF4222A00515550 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A983EA11BF4222A00515550 /* main.m */; };
@@ -53,6 +54,8 @@
 		197BC38E1BF708AA003B88AE /* article4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = article4.jpg; sourceTree = SOURCE_ROOT; };
 		197BC3901BF70921003B88AE /* article5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = article5.jpg; sourceTree = SOURCE_ROOT; };
 		197BC3941BF7144B003B88AE /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = SOURCE_ROOT; };
+		198BE1341C0AA4F900A84472 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
+		198BE1351C0AA4F900A84472 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
 		19B21EDA1BF7870400F68A57 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = SOURCE_ROOT; };
 		9A37D41C1BF42E300096DCB4 /* ios_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios_logo.png; sourceTree = "<group>"; };
 		9A983E9D1BF4222A00515550 /* ArticleManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +170,8 @@
 				9A983EB81BF4229D00515550 /* Article.m */,
 				190D963E1BFA2F10008BFC5E /* ArticleManager.h */,
 				190D963F1BFA2F10008BFC5E /* ArticleManager.m */,
+				198BE1341C0AA4F900A84472 /* ConnectionManager.h */,
+				198BE1351C0AA4F900A84472 /* ConnectionManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				190D96431BFA3A89008BFC5E /* AddArticleViewController.m in Sources */,
 				190D96401BFA2F10008BFC5E /* ArticleManager.m in Sources */,
 				9A983EA81BF4222A00515550 /* ViewController.m in Sources */,
+				198BE1361C0AA4F900A84472 /* ConnectionManager.m in Sources */,
 				9A983EA51BF4222A00515550 /* AppDelegate.m in Sources */,
 				9A983EBE1BF4275B00515550 /* CustomTableViewCell.m in Sources */,
 				193F32311BF4D6BA00AF5DD1 /* ImageViewController.m in Sources */,
