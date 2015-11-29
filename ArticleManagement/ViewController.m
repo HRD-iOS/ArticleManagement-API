@@ -34,23 +34,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.customTableView.delegate = self;
-    self.customTableView.dataSource = self;;
+    self.customTableView.dataSource = self;
+    
     self.articleList = [[NSMutableArray alloc]init];
-    ConnectionManager *manager = [[ConnectionManager alloc] init];
-    
-    manager.delegate = self;
-    
-    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
-    [dictionary setObject:@"10" forKey:@"row"];
-    [dictionary setObject:@"1" forKey:@"pageCount"];
-    
-    [manager sendTranData:dictionary withKey:@"/api/article/hrd_r001"];
     
     self.refreshControl = [[UIRefreshControl alloc]init];
     self.refreshControl.backgroundColor = [UIColor colorWithRed:75/255.0f green:157/255.0f blue:78/255.0f alpha:1.0f];
     self.refreshControl.tintColor = [UIColor whiteColor];
     [self.customTableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+        [self.articleList removeAllObjects];
+        ConnectionManager *manager = [[ConnectionManager alloc] init];
+        
+        manager.delegate = self;
+        
+        NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
+        [dictionary setObject:@"10" forKey:@"row"];
+        [dictionary setObject:@"1" forKey:@"pageCount"];
+        
+        [manager sendTranData:dictionary withKey:@"/api/article/hrd_r001"];
+        
+        [self.customTableView reloadData];
+
 }
 
 #pragma mark: - ConnectionManagerDelegate
@@ -65,6 +73,16 @@
 }
 
 -(void)refreshData{
+     [self.articleList removeAllObjects];
+    ConnectionManager *manager = [[ConnectionManager alloc] init];
+    
+    manager.delegate = self;
+    
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
+    [dictionary setObject:@"10" forKey:@"row"];
+    [dictionary setObject:@"1" forKey:@"pageCount"];
+    
+    [manager sendTranData:dictionary withKey:@"/api/article/hrd_r001"];
     
     [self.customTableView reloadData];
 }
