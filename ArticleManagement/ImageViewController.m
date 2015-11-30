@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.scrollView.delegate = self;
+    
+    // set image to imageview
     _imageViewImage.image = [self.article image];
     _scrollView.minimumZoomScale = 1.0;
     _scrollView.maximumZoomScale = 6.0;
@@ -30,9 +32,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)dismissImageViewController:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 - (IBAction)saveImageToGallery:(id)sender {
     
     UIAlertController *alertController = [UIAlertController
@@ -50,6 +54,7 @@
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction *action)
                                {
+                                   //if user click ok then save image to Album
                                    UIImage *image = [self.article image];
                                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
                                }];

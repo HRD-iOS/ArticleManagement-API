@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "Article.h"
-#import "ArticleManager.h"
 
 @interface EditArticleViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 

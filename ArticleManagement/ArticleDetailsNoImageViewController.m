@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+     // set article's content from sender to view element
     _labelTitle.text = [self.article title];
     _textViewContent.text = [self.article descriptions];
 }
@@ -28,8 +30,9 @@
 - (IBAction)dismissArticleDetailsNoImageView:(id)sender {
       [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 - (IBAction)shareArticleDetail:(id)sender {
-    
     NSArray *data = [[NSArray alloc]initWithObjects:@"hello",nil];
     
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:data applicationActivities:nil];

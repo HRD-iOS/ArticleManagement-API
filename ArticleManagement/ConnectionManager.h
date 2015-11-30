@@ -11,6 +11,8 @@
 @protocol  ConnectionManagerDelegate;
 
 @interface ConnectionManager : NSObject
+
+//Request Method
 -(void)sendTranData:(NSDictionary *)reqDictionary withKey:(NSString *)key;
 
 @property (nonatomic, weak) id<ConnectionManagerDelegate>delegate;
@@ -19,6 +21,7 @@
 
 @protocol ConnectionManagerDelegate <NSObject>
 @optional
+//Get Result Method
 -(void)returnResult:(NSDictionary *) result;
 
 @end

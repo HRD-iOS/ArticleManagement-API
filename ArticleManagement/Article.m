@@ -14,13 +14,13 @@
     self = [super init];
     
     if (self != nil) {
-        self.articleID = [array valueForKeyPath:@"id"];
-        self.title = [array valueForKeyPath:@"title"];
-        self.descriptions = [array valueForKeyPath:@"description"];
-        self.publishDate = [array valueForKeyPath:@"publishDate"];
-        self.imageUrlString = [array valueForKeyPath:@"image"];
-        self.enabled = [array valueForKeyPath:@"enabled"];
-        self.userID = [array valueForKeyPath:@"userId"];
+        self.articleID = [array valueForKey:@"id"];
+        self.title = [array valueForKey:@"title"];
+        self.descriptions = [array valueForKey:@"description"];
+        self.publishDate = [array valueForKey:@"publishDate"];
+        self.imageUrlString = [array valueForKey:@"image"];
+        self.enabled = [array valueForKey:@"enabled"];
+        self.userID = [array valueForKey:@"userId"];
     }
     return self;
 }

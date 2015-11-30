@@ -18,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // set article's content from sender to view element
     self.labelTitle.text = [self.article title];
     self.imageViewImage.image = [self.article image];
     self.textViewContent.text =[self.article descriptions];
@@ -31,14 +33,14 @@
 - (IBAction)dismissArticleDetailsView:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+//Share button
 - (IBAction)shareArticleDetails:(id)sender {
-    
     NSArray *data = [[NSArray alloc]initWithObjects:@"hello",nil];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:data applicationActivities:nil];
     [self presentViewController:activityViewController animated:YES completion:nil];
-    
-
 }
+
 - (IBAction)showImage:(id)sender {
     [self performSegueWithIdentifier:@"segueImage" sender:self.article];
 }
@@ -46,8 +48,6 @@
 - (IBAction)editDetail:(id)sender {
     [self performSegueWithIdentifier:@"segueEditDetail" sender:self.article];
 }
-
-
 
 #pragma mark - Navigation
 

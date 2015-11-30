@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		190D96401BFA2F10008BFC5E /* ArticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 190D963F1BFA2F10008BFC5E /* ArticleManager.m */; };
 		190D96431BFA3A89008BFC5E /* AddArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190D96421BFA3A89008BFC5E /* AddArticleViewController.m */; };
 		190D96471BFA5203008BFC5E /* EditArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190D96461BFA5203008BFC5E /* EditArticleViewController.m */; };
 		193F322C1BF4D30100AF5DD1 /* ArticleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193F322B1BF4D30100AF5DD1 /* ArticleDetailsViewController.m */; };
@@ -35,8 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		190D963E1BFA2F10008BFC5E /* ArticleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleManager.h; sourceTree = "<group>"; };
-		190D963F1BFA2F10008BFC5E /* ArticleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleManager.m; sourceTree = "<group>"; };
 		190D96411BFA3A89008BFC5E /* AddArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddArticleViewController.h; sourceTree = "<group>"; };
 		190D96421BFA3A89008BFC5E /* AddArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddArticleViewController.m; sourceTree = "<group>"; };
 		190D96451BFA5203008BFC5E /* EditArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditArticleViewController.h; sourceTree = "<group>"; };
@@ -171,8 +168,6 @@
 			children = (
 				196DE8911C0B3E57007A3A34 /* Article.h */,
 				196DE8921C0B3E57007A3A34 /* Article.m */,
-				190D963E1BFA2F10008BFC5E /* ArticleManager.h */,
-				190D963F1BFA2F10008BFC5E /* ArticleManager.m */,
 				198BE1341C0AA4F900A84472 /* ConnectionManager.h */,
 				198BE1351C0AA4F900A84472 /* ConnectionManager.m */,
 			);
@@ -273,7 +268,6 @@
 				193F32341BF4DC6F00AF5DD1 /* CustomViewViewController.m in Sources */,
 				190D96431BFA3A89008BFC5E /* AddArticleViewController.m in Sources */,
 				196DE8931C0B3E57007A3A34 /* Article.m in Sources */,
-				190D96401BFA2F10008BFC5E /* ArticleManager.m in Sources */,
 				9A983EA81BF4222A00515550 /* ViewController.m in Sources */,
 				198BE1361C0AA4F900A84472 /* ConnectionManager.m in Sources */,
 				9A983EA51BF4222A00515550 /* AppDelegate.m in Sources */,

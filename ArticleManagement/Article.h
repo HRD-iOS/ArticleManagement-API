@@ -13,6 +13,7 @@
 
 -(id)initWithData:(NSArray *)data;
 
+//Article's Fields
 @property(nonatomic,strong) NSNumber *articleID;
 @property(nonatomic,strong) NSString *title;
 @property(nonatomic,strong) NSString *descriptions;

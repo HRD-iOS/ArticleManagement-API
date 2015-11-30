@@ -19,6 +19,7 @@ NSNumber *articleID;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // set article's content from sender to view element
     _textFieldTitle.text=[self.article title];
     _textViewContent.text =[self.article descriptions];
     _imageViewImage.image = [self.article image];

@@ -51,6 +51,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    //validate tableview 1 or 2
     if(tableView == _tableView1){
         UITableViewCell *cell = [_tableView1 dequeueReusableCellWithIdentifier:@"tableView1Cell"] ;
         cell.textLabel.text = [NSString stringWithFormat:@"Cell %ld", (long)indexPath.row];
