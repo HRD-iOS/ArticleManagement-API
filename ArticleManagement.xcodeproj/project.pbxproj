@@ -31,6 +31,7 @@
 		9A983EAD1BF4222A00515550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A983EAC1BF4222A00515550 /* Assets.xcassets */; };
 		9A983EB01BF4222A00515550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A983EAE1BF4222A00515550 /* LaunchScreen.storyboard */; };
 		9A983EBE1BF4275B00515550 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A983EBD1BF4275B00515550 /* CustomTableViewCell.m */; };
+		9AF328201C0BEF49007F13C6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3281F1C0BEF49007F13C6 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		9A983EB11BF4222A00515550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A983EBC1BF4275B00515550 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		9A983EBD1BF4275B00515550 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		9AF3281E1C0BEF49007F13C6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9AF3281F1C0BEF49007F13C6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 				190D96421BFA3A89008BFC5E /* AddArticleViewController.m */,
 				190D96451BFA5203008BFC5E /* EditArticleViewController.h */,
 				190D96461BFA5203008BFC5E /* EditArticleViewController.m */,
+				9AF3281E1C0BEF49007F13C6 /* LoginViewController.h */,
+				9AF3281F1C0BEF49007F13C6 /* LoginViewController.m */,
 			);
 			name = "Custom View Controller";
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 			files = (
 				193F322C1BF4D30100AF5DD1 /* ArticleDetailsViewController.m in Sources */,
 				193F32371BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.m in Sources */,
+				9AF328201C0BEF49007F13C6 /* LoginViewController.m in Sources */,
 				190D96471BFA5203008BFC5E /* EditArticleViewController.m in Sources */,
 				193F32341BF4DC6F00AF5DD1 /* CustomViewViewController.m in Sources */,
 				190D96431BFA3A89008BFC5E /* AddArticleViewController.m in Sources */,
