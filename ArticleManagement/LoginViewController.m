@@ -19,13 +19,14 @@
     [super viewDidLoad];
     
     // border radius
-    [self.textFieldUsername.layer setCornerRadius:25.0f];
+    [self.textFieldUsername.layer setCornerRadius:(self.textFieldUsername.bounds.size.height/2)];
     
-    [self.textFieldPassword.layer setCornerRadius:25.0f];
+    [self.textFieldPassword.layer setCornerRadius:(self.textFieldPassword.bounds.size.height/2)];
     
-    [self.buttonLogin.layer setCornerRadius:25.0f];
+    [self.buttonLogin.layer setCornerRadius:self.buttonLogin.bounds.size.height/2];
     self.buttonLogin.clipsToBounds = YES;
     
+    //Set color for button login
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.buttonLogin.bounds;
     gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:(96/255.0) green:(214/255.0) blue:(140/255.0) alpha:1.00] CGColor], (id)[[UIColor colorWithRed:(74/225.0) green:(187/255.0) blue:(234/255.0) alpha:1.00] CGColor], nil];
@@ -33,13 +34,19 @@
     gradient.endPoint = CGPointMake(1, 0);
    [[self.buttonLogin layer] insertSublayer:gradient atIndex:0];
     
+    //set labelMessage property
+    self.labelMessage.layer.masksToBounds = YES;
+    self.labelMessage.layer.cornerRadius = self.labelMessage.bounds.size.height/2;
+    self.labelMessage.hidden = true;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)loginAction:(id)sender {
+    [self.activityIndicatorLoading startAnimating];
     //Create connection manager
     ConnectionManager *manager = [[ConnectionManager alloc] init];
     
@@ -58,9 +65,25 @@
 #pragma mark: - ConnectionManagerDelegate
 
 -(void)returnResult:(NSDictionary *)result{
-    if(result!=nil){
-        NSLog(@"%@", result);
+    [self.activityIndicatorLoading stopAnimating];
+    if([[result valueForKey:@"MESSAGE"] isEqualToString:@"LOGIN SUCCESS"]){
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:[result valueForKey:@"RES_DATA"] forKey:@"user"];
+        
         [self performSegueWithIdentifier:@"loginSuccessSegue" sender:nil];
+    }
+    else{
+        self.labelMessage.hidden = false;
+        [UIView animateWithDuration:1 animations:^(void){
+            self.labelMessage.alpha = 0;
+            self.labelMessage.alpha = 1;
+        } completion:^(BOOL finished){
+            [UIView animateWithDuration:1.0 animations:^(void){
+                self.labelMessage.alpha = 1;
+                self.labelMessage.alpha = 0;
+                
+            }];
+        }];
     }
 }
 

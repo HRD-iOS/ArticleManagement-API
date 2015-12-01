@@ -32,6 +32,8 @@
 		9A983EB01BF4222A00515550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A983EAE1BF4222A00515550 /* LaunchScreen.storyboard */; };
 		9A983EBE1BF4275B00515550 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A983EBD1BF4275B00515550 /* CustomTableViewCell.m */; };
 		9AF328201C0BEF49007F13C6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3281F1C0BEF49007F13C6 /* LoginViewController.m */; };
+		9AFB97E51C0D7583002C7768 /* green-line-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9AFB97E41C0D7583002C7768 /* green-line-background.jpg */; };
+		9AFB97E71C0D7845002C7768 /* logo_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFB97E61C0D7845002C7768 /* logo_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		9A983EBD1BF4275B00515550 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		9AF3281E1C0BEF49007F13C6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9AF3281F1C0BEF49007F13C6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9AFB97E41C0D7583002C7768 /* green-line-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "green-line-background.jpg"; sourceTree = "<group>"; };
+		9AFB97E61C0D7845002C7768 /* logo_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 		9A37D41B1BF42E1B0096DCB4 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				9AFB97E61C0D7845002C7768 /* logo_icon.png */,
+				9AFB97E41C0D7583002C7768 /* green-line-background.jpg */,
 				196DE8BA1C0B5F29007A3A34 /* no-images.png */,
 				19B21EDA1BF7870400F68A57 /* share.png */,
 				197BC3941BF7144B003B88AE /* logo.jpg */,
@@ -246,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A983EB01BF4222A00515550 /* LaunchScreen.storyboard in Resources */,
+				9AFB97E71C0D7845002C7768 /* logo_icon.png in Resources */,
 				197BC38F1BF708AA003B88AE /* article4.jpg in Resources */,
 				197BC3951BF7144B003B88AE /* logo.jpg in Resources */,
 				9A983EAD1BF4222A00515550 /* Assets.xcassets in Resources */,
@@ -257,6 +264,7 @@
 				197BC38B1BF70750003B88AE /* article2.jpg in Resources */,
 				197BC3891BF6FF17003B88AE /* article1.jpg in Resources */,
 				9A983EAB1BF4222A00515550 /* Main.storyboard in Resources */,
+				9AFB97E51C0D7583002C7768 /* green-line-background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
