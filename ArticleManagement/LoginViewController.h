@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonSignUp;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorLoading;
 @property (weak, nonatomic) IBOutlet UILabel *labelMessage;
+@property (weak, nonatomic) IBOutlet UIView *viewTopbanner;
 
 @end

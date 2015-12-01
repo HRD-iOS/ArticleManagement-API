@@ -18,10 +18,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // border radius
-    [self.textFieldUsername.layer setCornerRadius:(self.textFieldUsername.bounds.size.height/2)];
+    //Set color for button login
+    CAGradientLayer *gradient1 = [CAGradientLayer layer];
+    gradient1.frame = self.viewTopbanner.bounds;
+   gradient1.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:(96/255.0) green:(214/255.0) blue:(140/255.0) alpha:1.00] CGColor], (id)[[UIColor colorWithRed:(74/225.0) green:(187/255.0) blue:(234/255.0) alpha:1.00] CGColor], nil];
     
-    [self.textFieldPassword.layer setCornerRadius:(self.textFieldPassword.bounds.size.height/2)];
+    gradient1.startPoint = CGPointMake(0, 1);
+    gradient1.endPoint = CGPointMake(0, 0);
+    [self.viewTopbanner.layer insertSublayer:gradient1 atIndex:0];
+    
+
+    
+    // border radius
+    self.textFieldUsername.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    CALayer *bottomBorder = [CALayer layer];
+    bottomBorder.frame = CGRectMake(0.0f, self.textFieldUsername.frame.size.height - 1, self.textFieldUsername.frame.size.width, 1.0f);
+    bottomBorder.backgroundColor = [UIColor whiteColor].CGColor;
+    [self.textFieldUsername.layer addSublayer:bottomBorder];
+    
+    
+    self.textFieldPassword.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    CALayer *bottomBorder1 = [CALayer layer];
+    bottomBorder1.frame = CGRectMake(0.0f, self.textFieldPassword.frame.size.height - 1, self.textFieldPassword.frame.size.width, 1.0f);
+    bottomBorder1.backgroundColor = [UIColor whiteColor].CGColor;
+    [self.textFieldPassword.layer addSublayer:bottomBorder1];
     
     [self.buttonLogin.layer setCornerRadius:self.buttonLogin.bounds.size.height/2];
     self.buttonLogin.clipsToBounds = YES;
