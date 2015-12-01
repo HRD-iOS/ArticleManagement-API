@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="-690.5" y="351.5"/>
         </scene>
-        <!--Login View Controller Scene-->
+        <!--Login View Controller-->
         <scene sceneID="Nzz-RL-DN9">
             <objects>
-                <viewController title="Login View Controller Scene" id="chP-2I-9Fh" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="chP-2I-9Fh" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zc5-dz-yyN"/>
                         <viewControllerLayoutGuide type="bottom" id="Eg9-RB-LYu"/>
@@ -207,11 +207,12 @@
                         <outlet property="buttonSignUp" destination="4mH-WC-8IP" id="v0s-wE-kJ1"/>
                         <outlet property="textFieldPassword" destination="d3Y-yE-ntS" id="Tew-ax-sPd"/>
                         <outlet property="textFieldUsername" destination="2fT-TC-8Vo" id="17G-Nn-kFe"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginSuccessSegue" id="sW3-g9-snn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0l4-Vl-fmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1132.5" y="504.5"/>
+            <point key="canvasLocation" x="-1080.5" y="399.5"/>
         </scene>
         <!--Main Screen-->
         <scene sceneID="tne-QT-ifu">
@@ -304,7 +305,7 @@
                                             <outlet property="labelTitle" destination="PH8-eb-xg6" id="cl9-aC-YTJ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellWithoutImage" rowHeight="170" id="gjR-cX-vxX" customClass="CustomTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cellWithoutImage" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellWithoutImage" rowHeight="170" id="gjR-cX-vxX" customClass="CustomTableViewCell">
                                         <rect key="frame" x="0.0" y="198" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gjR-cX-vxX" id="1SR-1c-IkJ">
@@ -904,7 +905,7 @@
         <image name="share.png" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tpQ-t8-8ve"/>
         <segue reference="3dl-oE-vs6"/>
+        <segue reference="sW3-g9-snn"/>
     </inferredMetricsTieBreakers>
 </document>

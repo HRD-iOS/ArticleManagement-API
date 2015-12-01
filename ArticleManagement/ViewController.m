@@ -73,7 +73,7 @@
 #pragma mark: - ConnectionManagerDelegate
 
 -(void)returnResult:(NSDictionary *)result{
-    
+    NSLog(@"%@", result);
     // loop array in result
     for ( NSArray *subList in [result valueForKey:@"RES_DATA"]) {
         Article *article = [[Article alloc]initWithData:subList];
@@ -146,7 +146,7 @@
         return cell;
     }
     else{
-        
+       
         // Has image
         
         CustomTableViewCell *cell = [_customTableView dequeueReusableCellWithIdentifier:@"cellWithImage" forIndexPath:indexPath];
@@ -180,7 +180,7 @@
         });
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            CustomTableViewCell *cell = [self.customTableView cellForRowAtIndexPath:indexPath];
+            CustomTableViewCell *cell = [self.customTableView  cellForRowAtIndexPath:indexPath];
             UIImage *image = [UIImage imageWithData:dataImage];
             self.articleList[indexPath.row].image = image;
             cell.imageViewImage.image = image;

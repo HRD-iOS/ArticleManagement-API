@@ -58,7 +58,10 @@
 #pragma mark: - ConnectionManagerDelegate
 
 -(void)returnResult:(NSDictionary *)result{
-    NSLog(@"%@", result);
+    if(result!=nil){
+        NSLog(@"%@", result);
+        [self performSegueWithIdentifier:@"loginSuccessSegue" sender:nil];
+    }
 }
 
 /*
