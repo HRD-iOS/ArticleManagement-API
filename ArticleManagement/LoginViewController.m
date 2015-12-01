@@ -7,8 +7,9 @@
 //
 
 #import "LoginViewController.h"
+#import "ConnectionManager.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<ConnectionManagerDelegate>
 
 @end
 
@@ -16,11 +17,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // border radius
+    [self.textFieldUsername.layer setCornerRadius:25.0f];
+    
+    [self.textFieldPassword.layer setCornerRadius:25.0f];
+    
+    [self.buttonLogin.layer setCornerRadius:25.0f];
+    self.buttonLogin.clipsToBounds = YES;
+    
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.buttonLogin.bounds;
-    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor] CGColor], (id)[[UIColor blackColor] CGColor], nil];
-    gradient.startPoint = CGPointMake(1.00, 0.00);
-    gradient.endPoint = CGPointMake(0.00, 1.00);
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:(96/255.0) green:(214/255.0) blue:(140/255.0) alpha:1.00] CGColor], (id)[[UIColor colorWithRed:(74/225.0) green:(187/255.0) blue:(234/255.0) alpha:1.00] CGColor], nil];
+    gradient.startPoint = CGPointMake(0, 0);
+    gradient.endPoint = CGPointMake(1, 0);
    [[self.buttonLogin layer] insertSublayer:gradient atIndex:0];
     
 }
@@ -28,6 +38,27 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)loginAction:(id)sender {
+    //Create connection manager
+    ConnectionManager *manager = [[ConnectionManager alloc] init];
+    
+    manager.delegate = self;
+    
+    // request dictionary
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
+    [dictionary setObject:self.textFieldUsername.text forKey:@"username"];
+    [dictionary setObject:self.textFieldPassword.text forKey:@"password"];
+    
+    // send data to server
+    [manager sendTranData:dictionary withKey:@"/api/login"];
+    
+}
+
+#pragma mark: - ConnectionManagerDelegate
+
+-(void)returnResult:(NSDictionary *)result{
+    NSLog(@"%@", result);
 }
 
 /*
