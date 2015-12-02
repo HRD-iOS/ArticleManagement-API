@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="chP-2I-9Fh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="chP-2I-9Fh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -606,26 +606,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="RJX-8f-iEH">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <animations/>
-                                <items>
-                                    <navigationItem id="JPz-Ya-146">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Xb1-Tu-Bz8">
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="dismissImageViewController:" destination="dd4-z5-RtU" id="Qcx-oq-4jc"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="sBI-it-pn6">
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="saveImageToGallery:" destination="dd4-z5-RtU" id="v3U-Uf-hIQ"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tT-0p-jIa">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
@@ -658,6 +638,26 @@
                                     <constraint firstItem="k13-1H-R9h" firstAttribute="top" secondItem="1tT-0p-jIa" secondAttribute="top" constant="8" id="zra-PW-JMu"/>
                                 </constraints>
                             </scrollView>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="RJX-8f-iEH">
+                                <rect key="frame" x="-82" y="20" width="375" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem id="JPz-Ya-146">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Xb1-Tu-Bz8">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="dismissImageViewController:" destination="dd4-z5-RtU" id="Qcx-oq-4jc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="sBI-it-pn6">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="saveImageToGallery:" destination="dd4-z5-RtU" id="v3U-Uf-hIQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -949,7 +949,7 @@
         <image name="share.png" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sW3-g9-snn"/>
+        <segue reference="Xzm-fl-aIH"/>
         <segue reference="yze-QL-CvA"/>
     </inferredMetricsTieBreakers>
 </document>

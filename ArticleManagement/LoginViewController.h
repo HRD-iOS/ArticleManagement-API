@@ -18,4 +18,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelMessage;
 @property (weak, nonatomic) IBOutlet UIView *viewTopbanner;
 
+-(NSString *) randomStringWithLength: (int) len;
 @end

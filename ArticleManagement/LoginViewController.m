@@ -8,8 +8,9 @@
 
 #import "LoginViewController.h"
 #import "ConnectionManager.h"
+#import "ImageConnectionManager.h"
 
-@interface LoginViewController ()<ConnectionManagerDelegate>
+@interface LoginViewController ()<ImageConnectionManagerDelegate>
 
 @end
 
@@ -66,45 +67,63 @@
 }
 
 - (IBAction)loginAction:(id)sender {
-    [self.activityIndicatorLoading startAnimating];
-    //Create connection manager
-    ConnectionManager *manager = [[ConnectionManager alloc] init];
+
+
+//    [self.activityIndicatorLoading startAnimating];
+//    //Create connection manager
+//    ConnectionManager *manager = [[ConnectionManager alloc] init];
+//    
+//    manager.delegate = self;
+//    
+//    // request dictionary
+//    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
+//    [dictionary setObject:self.textFieldUsername.text forKey:@"username"];
+//    [dictionary setObject:self.textFieldPassword.text forKey:@"password"];
+//    
+//    // send data to server
+//    [manager sendTranData:dictionary withKey:@"/api/login"];
+        ImageConnectionManager *manager = [[ImageConnectionManager alloc] init];
     
-    manager.delegate = self;
+        manager.delegate = self;
     
-    // request dictionary
-    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
-    [dictionary setObject:self.textFieldUsername.text forKey:@"username"];
-    [dictionary setObject:self.textFieldPassword.text forKey:@"password"];
+        // request dictionary
     
-    // send data to server
-    [manager sendTranData:dictionary withKey:@"/api/login"];
+        // send data to server
+        [manager sendTranData];
+
+    
     
 }
+
 
 #pragma mark: - ConnectionManagerDelegate
 
 -(void)returnResult:(NSDictionary *)result{
-    [self.activityIndicatorLoading stopAnimating];
-    if([[result valueForKey:@"MESSAGE"] isEqualToString:@"LOGIN SUCCESS"]){
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:[result valueForKey:@"RES_DATA"] forKey:@"user"];
-        
-        [self performSegueWithIdentifier:@"loginSuccessSegue" sender:nil];
-    }
-    else{
-        self.labelMessage.hidden = false;
-        [UIView animateWithDuration:1 animations:^(void){
-            self.labelMessage.alpha = 0;
-            self.labelMessage.alpha = 1;
-        } completion:^(BOOL finished){
-            [UIView animateWithDuration:1.0 animations:^(void){
-                self.labelMessage.alpha = 1;
-                self.labelMessage.alpha = 0;
-                
-            }];
-        }];
-    }
+
+
+//    [self.activityIndicatorLoading stopAnimating];
+//    if([[result valueForKey:@"MESSAGE"] isEqualToString:@"LOGIN SUCCESS"]){
+//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//        [defaults setObject:[result valueForKey:@"RES_DATA"] forKey:@"user"];
+//        
+//        [self performSegueWithIdentifier:@"loginSuccessSegue" sender:nil];
+//    }
+//    else{
+//        self.labelMessage.hidden = false;
+//        [UIView animateWithDuration:1 animations:^(void){
+//            self.labelMessage.alpha = 0;
+//            self.labelMessage.alpha = 1;
+//        } completion:^(BOOL finished){
+//            [UIView animateWithDuration:1.0 animations:^(void){
+//                self.labelMessage.alpha = 1;
+//                self.labelMessage.alpha = 0;
+//                
+//            }];
+//        }];
+//    }
+    
+    
+    NSLog(@"%@",result);
 }
 
 /*

@@ -34,6 +34,7 @@
 		9A983EAD1BF4222A00515550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A983EAC1BF4222A00515550 /* Assets.xcassets */; };
 		9A983EB01BF4222A00515550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A983EAE1BF4222A00515550 /* LaunchScreen.storyboard */; };
 		9A983EBE1BF4275B00515550 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A983EBD1BF4275B00515550 /* CustomTableViewCell.m */; };
+		9AE6B98B1C0E884B00054E0B /* ImageConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6B98A1C0E884B00054E0B /* ImageConnectionManager.m */; };
 		9AF328201C0BEF49007F13C6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3281F1C0BEF49007F13C6 /* LoginViewController.m */; };
 		9AFB97E51C0D7583002C7768 /* green-line-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9AFB97E41C0D7583002C7768 /* green-line-background.jpg */; };
 		9AFB97E71C0D7845002C7768 /* logo_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AFB97E61C0D7845002C7768 /* logo_icon.png */; };
@@ -80,6 +81,8 @@
 		9A983EB11BF4222A00515550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A983EBC1BF4275B00515550 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		9A983EBD1BF4275B00515550 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		9AE6B9891C0E884B00054E0B /* ImageConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageConnectionManager.h; sourceTree = "<group>"; };
+		9AE6B98A1C0E884B00054E0B /* ImageConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageConnectionManager.m; sourceTree = "<group>"; };
 		9AF3281E1C0BEF49007F13C6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9AF3281F1C0BEF49007F13C6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9AFB97E41C0D7583002C7768 /* green-line-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "green-line-background.jpg"; sourceTree = "<group>"; };
@@ -190,6 +193,8 @@
 				196DE8921C0B3E57007A3A34 /* Article.m */,
 				198BE1341C0AA4F900A84472 /* ConnectionManager.h */,
 				198BE1351C0AA4F900A84472 /* ConnectionManager.m */,
+				9AE6B9891C0E884B00054E0B /* ImageConnectionManager.h */,
+				9AE6B98A1C0E884B00054E0B /* ImageConnectionManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				196DE8931C0B3E57007A3A34 /* Article.m in Sources */,
 				9A983EA81BF4222A00515550 /* ViewController.m in Sources */,
 				198BE1361C0AA4F900A84472 /* ConnectionManager.m in Sources */,
+				9AE6B98B1C0E884B00054E0B /* ImageConnectionManager.m in Sources */,
 				9A983EA51BF4222A00515550 /* AppDelegate.m in Sources */,
 				9A983EBE1BF4275B00515550 /* CustomTableViewCell.m in Sources */,
 				193F32311BF4D6BA00AF5DD1 /* ImageViewController.m in Sources */,
