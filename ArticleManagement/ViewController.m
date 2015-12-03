@@ -51,21 +51,14 @@
     [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
     
     
-    //Sidebar
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController ){
-        revealViewController.rightViewRevealOverdraw = 0.0f;
-        [self.moreButton addTarget:self.revealViewController action:@selector(rightRevealToggle: ) forControlEvents:UIControlEventTouchUpInside];
-        
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
-    
-    }
-    
+  
+}
 
 
 -(void)viewDidAppear:(BOOL)animated{
+  
     
+
     //remove all item from list
     [self.articleList removeAllObjects];
     
@@ -83,6 +76,15 @@
     [manager sendTranData:dictionary withKey:@"/api/article/hrd_r001"];
     
     [self.customTableView reloadData];
+    
+    //Sidebar
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController ){
+        revealViewController.rightViewRevealOverdraw = 0.0f;
+        [self.moreButton addTarget:self.revealViewController action:@selector(rightRevealToggle: ) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
     
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "CustomViewViewController.h"
+#import "SWRevealViewController.h"
 
 @interface CustomViewViewController ()
 
@@ -63,6 +64,20 @@
         return  cell;
     }
     
+    
+}
+-(void)viewDidAppear:(BOOL)animated{
+    
+    
+    //Sidebar
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController ){
+        revealViewController.rightViewRevealOverdraw = 0.0f;
+        [self.backButton setTarget:self.revealViewController];
+        [self.backButton setAction:@selector(rightRevealToggle: )];
+        
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
     
 }
 

@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     menuItems = @[@"userCell", @"aboutCell"];
+     menuItems = @[@"homeCell",@"userCell", @"aboutCell"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

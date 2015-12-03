@@ -278,6 +278,35 @@
             </objects>
             <point key="canvasLocation" x="-1343.5" y="378.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="wO6-To-oVS">
+            <objects>
+                <viewController id="SJJ-S3-URd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ehB-q4-JIU"/>
+                        <viewControllerLayoutGuide type="bottom" id="MRS-Kj-s5N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="192-RX-Sg5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prE-CF-EFY">
+                                <rect key="frame" x="188" y="250" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8x-59-i9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1723.5" y="1105.5"/>
+        </scene>
         <!--Sidebar Table View Controller-->
         <scene sceneID="yMD-61-bwC">
             <objects>
@@ -288,8 +317,31 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" textLabel="yBu-ly-PC1" style="IBUITableViewCellStyleDefault" id="ECI-z4-wye">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" textLabel="iTZ-n5-Hdd" style="IBUITableViewCellStyleDefault" id="aKM-Tb-cpj">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aKM-Tb-cpj" id="H9L-fW-yoT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iTZ-n5-Hdd">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="custom" identifier="showHome" customClass="SWRevealViewControllerSeguePushController" id="mrp-Hd-bFA"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" textLabel="yBu-ly-PC1" style="IBUITableViewCellStyleDefault" id="ECI-z4-wye">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ECI-z4-wye" id="pxc-k1-4JF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -307,9 +359,12 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="SJJ-S3-URd" kind="custom" identifier="showUser" customClass="SWRevealViewControllerSeguePushController" id="rQt-jy-oqk"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="aboutCell" textLabel="JXq-Jq-sBk" style="IBUITableViewCellStyleDefault" id="OSL-D8-ffJ">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OSL-D8-ffJ" id="vf6-Z5-voT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -327,6 +382,9 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="ZDk-O6-JAd" kind="custom" identifier="showAbout" customClass="SWRevealViewControllerSeguePushController" id="ZRR-8b-iZC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -873,9 +931,6 @@
                                     <navigationItem title="Custom View" id="EN3-sZ-V85">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="2UK-K0-9L3">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="Xzm-fl-aIH"/>
-                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -886,6 +941,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="backButton" destination="2UK-K0-9L3" id="ibe-Sy-t7R"/>
                         <outlet property="imageViewLogo" destination="9jx-U1-RaK" id="Feh-H4-4v7"/>
                         <outlet property="tableView1" destination="S5b-Is-Gx8" id="Wc8-fp-VI3"/>
                         <outlet property="tableView2" destination="WDf-lI-tPj" id="Woe-If-K9z"/>
@@ -893,7 +949,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nP8-fN-luI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="291.5" y="318.5"/>
+            <point key="canvasLocation" x="357.5" y="311.5"/>
         </scene>
         <!--Edit Article View Controller Scene-->
         <scene sceneID="Jj6-oH-GTI">
@@ -1033,7 +1089,7 @@
         <image name="share.png" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jrM-d8-3GO"/>
+        <segue reference="mrp-Hd-bFA"/>
         <segue reference="yze-QL-CvA"/>
     </inferredMetricsTieBreakers>
 </document>
