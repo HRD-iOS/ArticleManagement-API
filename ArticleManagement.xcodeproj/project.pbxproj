@@ -17,6 +17,8 @@
 		196DE8931C0DFF0F007A3A34 /* password-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 196DE8911C0DFF0F007A3A34 /* password-icon.png */; };
 		196DE8941C0DFF0F007A3A34 /* email-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 196DE8921C0DFF0F007A3A34 /* email-icon.png */; };
 		196DE8961C0E0D3F007A3A34 /* Midnight-Blue-Flat-UI-Color-Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 196DE8951C0E0D3F007A3A34 /* Midnight-Blue-Flat-UI-Color-Background.jpg */; };
+		196DE8981C10BFD1007A3A34 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196DE8971C10BFD1007A3A34 /* SWRevealViewController.m */; };
+		196DE89B1C10C037007A3A34 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196DE89A1C10C037007A3A34 /* SidebarTableViewController.m */; };
 		196DE8BB1C0B5F29007A3A34 /* no-images.png in Resources */ = {isa = PBXBuildFile; fileRef = 196DE8BA1C0B5F29007A3A34 /* no-images.png */; };
 		197BC3891BF6FF17003B88AE /* article1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 197BC3881BF6FF17003B88AE /* article1.jpg */; };
 		197BC38B1BF70750003B88AE /* article2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 197BC38A1BF70750003B88AE /* article2.jpg */; };
@@ -58,6 +60,10 @@
 		196DE8921C0B3E57007A3A34 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		196DE8921C0DFF0F007A3A34 /* email-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email-icon.png"; sourceTree = "<group>"; };
 		196DE8951C0E0D3F007A3A34 /* Midnight-Blue-Flat-UI-Color-Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Midnight-Blue-Flat-UI-Color-Background.jpg"; sourceTree = "<group>"; };
+		196DE8961C10BFD1007A3A34 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		196DE8971C10BFD1007A3A34 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		196DE8991C10C037007A3A34 /* SidebarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarTableViewController.h; sourceTree = "<group>"; };
+		196DE89A1C10C037007A3A34 /* SidebarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarTableViewController.m; sourceTree = "<group>"; };
 		196DE8BA1C0B5F29007A3A34 /* no-images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-images.png"; sourceTree = SOURCE_ROOT; };
 		197BC3881BF6FF17003B88AE /* article1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = article1.jpg; sourceTree = SOURCE_ROOT; };
 		197BC38A1BF70750003B88AE /* article2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = article2.jpg; sourceTree = SOURCE_ROOT; };
@@ -117,8 +123,19 @@
 				190D96461BFA5203008BFC5E /* EditArticleViewController.m */,
 				9AF3281E1C0BEF49007F13C6 /* LoginViewController.h */,
 				9AF3281F1C0BEF49007F13C6 /* LoginViewController.m */,
+				196DE8991C10C037007A3A34 /* SidebarTableViewController.h */,
+				196DE89A1C10C037007A3A34 /* SidebarTableViewController.m */,
 			);
 			name = "Custom View Controller";
+			sourceTree = "<group>";
+		};
+		196DE8951C10BFBF007A3A34 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				196DE8961C10BFD1007A3A34 /* SWRevealViewController.h */,
+				196DE8971C10BFD1007A3A34 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		9A37D41B1BF42E1B0096DCB4 /* Image */ = {
@@ -161,6 +178,7 @@
 		9A983E9F1BF4222A00515550 /* ArticleManagement */ = {
 			isa = PBXGroup;
 			children = (
+				196DE8951C10BFBF007A3A34 /* SWRevealViewController */,
 				193F32291BF4D2DB00AF5DD1 /* Custom View Controller */,
 				9A37D41B1BF42E1B0096DCB4 /* Image */,
 				9A983EBB1BF426EC00515550 /* Custom Table */,
@@ -294,11 +312,13 @@
 			files = (
 				193F322C1BF4D30100AF5DD1 /* ArticleDetailsViewController.m in Sources */,
 				193F32371BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.m in Sources */,
+				196DE8981C10BFD1007A3A34 /* SWRevealViewController.m in Sources */,
 				9AF328201C0BEF49007F13C6 /* LoginViewController.m in Sources */,
 				190D96471BFA5203008BFC5E /* EditArticleViewController.m in Sources */,
 				193F32341BF4DC6F00AF5DD1 /* CustomViewViewController.m in Sources */,
 				190D96431BFA3A89008BFC5E /* AddArticleViewController.m in Sources */,
 				196DE8931C0B3E57007A3A34 /* Article.m in Sources */,
+				196DE89B1C10C037007A3A34 /* SidebarTableViewController.m in Sources */,
 				9A983EA81BF4222A00515550 /* ViewController.m in Sources */,
 				198BE1361C0AA4F900A84472 /* ConnectionManager.m in Sources */,
 				9AE6B98B1C0E884B00054E0B /* ImageConnectionManager.m in Sources */,

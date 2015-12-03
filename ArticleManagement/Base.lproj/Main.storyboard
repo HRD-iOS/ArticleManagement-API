@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="chP-2I-9Fh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="chP-2I-9Fh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -182,19 +182,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzZ-Ix-esp">
-                                <rect key="frame" x="20" y="468" width="335" height="45"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.2867886560339773" green="1" blue="0.44031284609207422" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="0.29019607843137257" green="0.73333333333333328" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginAction:" destination="chP-2I-9Fh" eventType="touchUpInside" id="4gp-MZ-ufm"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuU-oa-5pT">
                                 <rect key="frame" x="57" y="520" width="172" height="30"/>
                                 <animations/>
@@ -234,6 +221,19 @@
                                     <color key="titleColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzZ-Ix-esp">
+                                <rect key="frame" x="20" y="467" width="335" height="45"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.2867886560339773" green="1" blue="0.44031284609207422" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.29019607843137257" green="0.73333333333333328" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAction:" destination="chP-2I-9Fh" eventType="touchUpInside" id="4gp-MZ-ufm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                     </view>
@@ -247,12 +247,98 @@
                         <outlet property="textFieldPassword" destination="d3Y-yE-ntS" id="Tew-ax-sPd"/>
                         <outlet property="textFieldUsername" destination="2fT-TC-8Vo" id="17G-Nn-kFe"/>
                         <outlet property="viewTopbanner" destination="IUE-j1-JQv" id="gWA-7u-8pN"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginSuccessSegue" id="sW3-g9-snn"/>
+                        <segue destination="fLM-ih-RHJ" kind="show" identifier="loginSuccessSegue" id="2T7-Jq-H3k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0l4-Vl-fmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1391.5" y="377.5"/>
+            <point key="canvasLocation" x="-1771.5" y="378.5"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="9ds-gw-cuj">
+            <objects>
+                <viewController id="fLM-ih-RHJ" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BS8-rL-H9q"/>
+                        <viewControllerLayoutGuide type="bottom" id="A2A-GS-Gi7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tW7-gc-exb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="Mlc-Ps-25n" kind="custom" identifier="sw_right" customClass="SWRevealViewControllerSegueSetController" id="LNd-Vu-Gub"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="jrM-d8-3GO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q3E-62-gbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1343.5" y="378.5"/>
+        </scene>
+        <!--Sidebar Table View Controller-->
+        <scene sceneID="yMD-61-bwC">
+            <objects>
+                <tableViewController id="Mlc-Ps-25n" customClass="SidebarTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="GDH-5l-5yV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" textLabel="yBu-ly-PC1" style="IBUITableViewCellStyleDefault" id="ECI-z4-wye">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ECI-z4-wye" id="pxc-k1-4JF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yBu-ly-PC1">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="aboutCell" textLabel="JXq-Jq-sBk" style="IBUITableViewCellStyleDefault" id="OSL-D8-ffJ">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OSL-D8-ffJ" id="vf6-Z5-voT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JXq-Jq-sBk">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mlc-Ps-25n" id="tf9-Ds-Uzo"/>
+                            <outlet property="delegate" destination="Mlc-Ps-25n" id="0iv-BZ-Jm1"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fnk-AY-dZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1159.5" y="1162.5"/>
         </scene>
         <!--Main Screen-->
         <scene sceneID="tne-QT-ifu">
@@ -296,9 +382,6 @@
                                                 <state key="normal" title="Custom">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="ZDk-O6-JAd" kind="show" id="sWV-ua-7A2"/>
-                                                </connections>
                                             </button>
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
@@ -384,13 +467,14 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="customTableView" destination="a6U-mI-WFz" id="ZQD-ME-Obb"/>
+                        <outlet property="moreButton" destination="BK1-FS-S2d" id="XuA-rm-2ZI"/>
                         <segue destination="vLb-I6-eic" kind="show" identifier="segueArticleDetails" id="pnV-vy-upH"/>
                         <segue destination="wfC-eA-TkQ" kind="show" identifier="segueArticleDetailsNoImage" id="Kjz-PZ-imz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-228.5" y="351.5"/>
+            <point key="canvasLocation" x="-141.5" y="351.5"/>
         </scene>
         <!--Article Details No Image View Controller-->
         <scene sceneID="uAP-uH-Jpc">
@@ -809,7 +893,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nP8-fN-luI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278.5" y="342.5"/>
+            <point key="canvasLocation" x="291.5" y="318.5"/>
         </scene>
         <!--Edit Article View Controller Scene-->
         <scene sceneID="Jj6-oH-GTI">
@@ -949,7 +1033,7 @@
         <image name="share.png" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xzm-fl-aIH"/>
+        <segue reference="jrM-d8-3GO"/>
         <segue reference="yze-QL-CvA"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,8 +12,11 @@
 #import "ArticleDetailsNoImageViewController.h"
 #import "ConnectionManager.h"
 #import "CustomTableViewCell.h"
+#import "SWRevealViewController.h"
+
 
 @interface ViewController ()<ConnectionManagerDelegate>
+#define RIGHT_PANEL_TAG 3
 
 //list for store article retrieve from server
 @property (nonatomic,strong) NSMutableArray<Article *> *articleList;
@@ -46,7 +49,20 @@
     self.refreshControl.tintColor = [UIColor whiteColor];
     [self.customTableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
-}
+    
+    
+    //Sidebar
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController ){
+        revealViewController.rightViewRevealOverdraw = 0.0f;
+        [self.moreButton addTarget:self.revealViewController action:@selector(rightRevealToggle: ) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
+    
+    }
+    
+
 
 -(void)viewDidAppear:(BOOL)animated{
     

@@ -12,6 +12,7 @@
 
 @property (nonatomic,strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UITableView *customTableView;
+@property (weak, nonatomic) IBOutlet UIButton *moreButton;
 
 @end
 
