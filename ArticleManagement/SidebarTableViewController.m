@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     menuItems = @[@"homeCell",@"userCell", @"aboutCell"];
+     menuItems = @[@"appleCell", @"homeCell",@"userCell", @"aboutCell",@"logoutCell"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -46,10 +46,27 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     NSString *CellIdentifier = [menuItems objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if(indexPath.row > 0){
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.contentView.bounds.size.width, 1)];
+    lineView.backgroundColor = [UIColor blackColor];
+    lineView.autoresizingMask = 0x3f;
+    [cell.contentView addSubview:lineView];
+    }
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if(indexPath.row == 4)
+    {
+        NSUserDefaults *userDefaul = [NSUserDefaults standardUserDefaults];
+        [userDefaul removeObjectForKey:@"user"];
+    }
+}
+
 
 
 /*

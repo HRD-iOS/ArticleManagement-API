@@ -28,6 +28,8 @@
 		197BC3951BF7144B003B88AE /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 197BC3941BF7144B003B88AE /* logo.jpg */; };
 		198BE1361C0AA4F900A84472 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 198BE1351C0AA4F900A84472 /* ConnectionManager.m */; };
 		19B21EDB1BF7870400F68A57 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 19B21EDA1BF7870400F68A57 /* share.png */; };
+		9A3393DD1C111FAF002E5825 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3393DC1C111FAF002E5825 /* UserDetailsViewController.m */; };
+		9A3393E01C1185AB002E5825 /* EditUserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3393DF1C1185AB002E5825 /* EditUserDetailsViewController.m */; };
 		9A37D41D1BF42E300096DCB4 /* ios_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A37D41C1BF42E300096DCB4 /* ios_logo.png */; };
 		9A983EA21BF4222A00515550 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A983EA11BF4222A00515550 /* main.m */; };
 		9A983EA51BF4222A00515550 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A983EA41BF4222A00515550 /* AppDelegate.m */; };
@@ -74,6 +76,10 @@
 		198BE1341C0AA4F900A84472 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
 		198BE1351C0AA4F900A84472 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
 		19B21EDA1BF7870400F68A57 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = SOURCE_ROOT; };
+		9A3393DB1C111FAF002E5825 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
+		9A3393DC1C111FAF002E5825 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		9A3393DE1C1185AB002E5825 /* EditUserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserDetailsViewController.h; sourceTree = "<group>"; };
+		9A3393DF1C1185AB002E5825 /* EditUserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserDetailsViewController.m; sourceTree = "<group>"; };
 		9A37D41C1BF42E300096DCB4 /* ios_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios_logo.png; sourceTree = "<group>"; };
 		9A983E9D1BF4222A00515550 /* ArticleManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A983EA11BF4222A00515550 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -125,6 +131,10 @@
 				9AF3281F1C0BEF49007F13C6 /* LoginViewController.m */,
 				196DE8991C10C037007A3A34 /* SidebarTableViewController.h */,
 				196DE89A1C10C037007A3A34 /* SidebarTableViewController.m */,
+				9A3393DB1C111FAF002E5825 /* UserDetailsViewController.h */,
+				9A3393DC1C111FAF002E5825 /* UserDetailsViewController.m */,
+				9A3393DE1C1185AB002E5825 /* EditUserDetailsViewController.h */,
+				9A3393DF1C1185AB002E5825 /* EditUserDetailsViewController.m */,
 			);
 			name = "Custom View Controller";
 			sourceTree = "<group>";
@@ -316,8 +326,10 @@
 				9AF328201C0BEF49007F13C6 /* LoginViewController.m in Sources */,
 				190D96471BFA5203008BFC5E /* EditArticleViewController.m in Sources */,
 				193F32341BF4DC6F00AF5DD1 /* CustomViewViewController.m in Sources */,
+				9A3393E01C1185AB002E5825 /* EditUserDetailsViewController.m in Sources */,
 				190D96431BFA3A89008BFC5E /* AddArticleViewController.m in Sources */,
 				196DE8931C0B3E57007A3A34 /* Article.m in Sources */,
+				9A3393DD1C111FAF002E5825 /* UserDetailsViewController.m in Sources */,
 				196DE89B1C10C037007A3A34 /* SidebarTableViewController.m in Sources */,
 				9A983EA81BF4222A00515550 /* ViewController.m in Sources */,
 				198BE1361C0AA4F900A84472 /* ConnectionManager.m in Sources */,

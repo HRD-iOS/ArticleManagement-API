@@ -56,9 +56,7 @@
 
 
 -(void)viewDidAppear:(BOOL)animated{
-  
     
-
     //remove all item from list
     [self.articleList removeAllObjects];
     

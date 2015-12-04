@@ -61,6 +61,13 @@
     self.labelMessage.hidden = true;
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    NSUserDefaults *userDefault=[NSUserDefaults standardUserDefaults];
+    if([userDefault valueForKey:@"user"]!=nil){
+         [self performSegueWithIdentifier:@"loginSuccessSegue" sender:nil];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -91,8 +98,6 @@
 //        // send data to server
 //        [manager sendTranData];
 
-    
-    
 }
 
 

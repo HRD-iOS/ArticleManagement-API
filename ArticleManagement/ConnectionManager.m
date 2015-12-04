@@ -51,8 +51,6 @@
         
         if (!error) {
             if ([request.URL isEqual:url] ) {
-                NSLog(@"\n\n----------------%@", localfile);
-                    NSLog(@"\n\n----------------%@", response);
                 NSData *data = [NSData dataWithContentsOfURL:localfile];
                 
                 //init responseData object
