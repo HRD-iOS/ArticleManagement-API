@@ -31,6 +31,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    [self.userDetailTableView reloadData];
     NSString *imageURL = [NSString stringWithFormat:@"http://hrdams.herokuapp.com/%@",[[userDefault valueForKey:@"user"] valueForKey:@"photo"]];
     
     

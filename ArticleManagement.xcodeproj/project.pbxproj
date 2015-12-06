@@ -17,6 +17,7 @@
 		196DE8931C0B3E57007A3A34 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 196DE8921C0B3E57007A3A34 /* Article.m */; };
 		196DE8931C0DFF0F007A3A34 /* password-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 196DE8911C0DFF0F007A3A34 /* password-icon.png */; };
 		196DE8941C0DFF0F007A3A34 /* email-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 196DE8921C0DFF0F007A3A34 /* email-icon.png */; };
+		196DE8951C14B016007A3A34 /* SignUpUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196DE8941C14B016007A3A34 /* SignUpUserViewController.m */; };
 		196DE8961C0E0D3F007A3A34 /* Midnight-Blue-Flat-UI-Color-Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 196DE8951C0E0D3F007A3A34 /* Midnight-Blue-Flat-UI-Color-Background.jpg */; };
 		196DE8981C10BFD1007A3A34 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196DE8971C10BFD1007A3A34 /* SWRevealViewController.m */; };
 		196DE89B1C10C037007A3A34 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 196DE89A1C10C037007A3A34 /* SidebarTableViewController.m */; };
@@ -63,6 +64,8 @@
 		196DE8911C1483FA007A3A34 /* tab-icon-more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-icon-more.png"; sourceTree = SOURCE_ROOT; };
 		196DE8921C0B3E57007A3A34 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		196DE8921C0DFF0F007A3A34 /* email-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email-icon.png"; sourceTree = "<group>"; };
+		196DE8931C14B016007A3A34 /* SignUpUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpUserViewController.h; sourceTree = "<group>"; };
+		196DE8941C14B016007A3A34 /* SignUpUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpUserViewController.m; sourceTree = "<group>"; };
 		196DE8951C0E0D3F007A3A34 /* Midnight-Blue-Flat-UI-Color-Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Midnight-Blue-Flat-UI-Color-Background.jpg"; sourceTree = "<group>"; };
 		196DE8961C10BFD1007A3A34 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		196DE8971C10BFD1007A3A34 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				9A3393DC1C111FAF002E5825 /* UserDetailsViewController.m */,
 				9A3393DE1C1185AB002E5825 /* EditUserDetailsViewController.h */,
 				9A3393DF1C1185AB002E5825 /* EditUserDetailsViewController.m */,
+				196DE8931C14B016007A3A34 /* SignUpUserViewController.h */,
+				196DE8941C14B016007A3A34 /* SignUpUserViewController.m */,
 			);
 			name = "Custom View Controller";
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				196DE8931C0B3E57007A3A34 /* Article.m in Sources */,
 				9A3393DD1C111FAF002E5825 /* UserDetailsViewController.m in Sources */,
 				196DE89B1C10C037007A3A34 /* SidebarTableViewController.m in Sources */,
+				196DE8951C14B016007A3A34 /* SignUpUserViewController.m in Sources */,
 				9A983EA81BF4222A00515550 /* ViewController.m in Sources */,
 				198BE1361C0AA4F900A84472 /* ConnectionManager.m in Sources */,
 				9AE6B98B1C0E884B00054E0B /* ImageConnectionManager.m in Sources */,

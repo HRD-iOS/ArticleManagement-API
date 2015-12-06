@@ -71,7 +71,7 @@
     //Send data to server and insert it
     [manager sendTranData:[userDefault valueForKey:@"user"] withKey:@"/api/user/hrd_u001"];
     
-    //[self performSegueWithIdentifier:@"segueSaveEditDetail" sender:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 - (IBAction)deleteUserAction:(id)sender {
@@ -105,7 +105,7 @@
                                           //Send data to server and insert it
                                           [manager sendTranData:dictionaryObject withKey:@"/api/user/hrd_d001"];
                                            [userDefault removeObjectForKey:@"user"];
-//                                          [self performSegueWithIdentifier:@"segueSaveEditDetail" sender:nil];
+                                         [self performSegueWithIdentifier:@"segueDeleteUser" sender:nil];
                                       }];
         
         [alertController addAction:cancelAction];
