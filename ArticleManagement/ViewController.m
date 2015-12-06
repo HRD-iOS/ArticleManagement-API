@@ -14,13 +14,18 @@
 #import "CustomTableViewCell.h"
 #import "SWRevealViewController.h"
 
+const int kLoadingCellTag = 1273;
 
-@interface ViewController ()<ConnectionManagerDelegate>
+@interface ViewController ()<ConnectionManagerDelegate>{
+     UIActivityIndicatorView *indicatorFooter;
+}
 #define RIGHT_PANEL_TAG 3
 
 //list for store article retrieve from server
 @property (nonatomic,strong) NSMutableArray<Article *> *articleList;
-
+@property int rows;
+@property int currentPageNumber;
+@property int totalPages;
 @end
 
 @implementation ViewController
@@ -51,7 +56,10 @@
     [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
     
     
-  
+    // call indicator at footer
+    _currentPageNumber =1;
+    [self initializeRefreshControl];
+    
 }
 
 
@@ -60,18 +68,7 @@
     //remove all item from list
     [self.articleList removeAllObjects];
     
-    //Create connection manager
-    ConnectionManager *manager = [[ConnectionManager alloc] init];
-    
-    manager.delegate = self;
-    
-    // request dictionary
-    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
-    [dictionary setObject:@"10" forKey:@"row"];
-    [dictionary setObject:@"1" forKey:@"pageCount"];
-    
-    // send data to server
-    [manager sendTranData:dictionary withKey:@"/api/article/hrd_r001"];
+    [self fetchArticle];
     
     [self.customTableView reloadData];
     
@@ -86,10 +83,30 @@
     
 }
 
+- (void)fetchArticle {
+    //Create connection manager
+    ConnectionManager *manager = [[ConnectionManager alloc] init];
+    
+    manager.delegate = self;
+    
+    // request dictionary
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
+     _rows = 5;
+    [dictionary setObject:[NSString stringWithFormat:@"%d", _rows] forKey:@"row"];
+    [dictionary setObject:[NSString stringWithFormat:@"%d", _currentPageNumber] forKey:@"pageCount"];
+    
+    // send data to server
+    [manager sendTranData:dictionary withKey:@"/api/article/hrd_r001"];
+}
+
+
+
 #pragma mark: - ConnectionManagerDelegate
 
 -(void)returnResult:(NSDictionary *)result{
     NSLog(@"%@", result);
+    _totalPages = ceil([[result valueForKey:@"TOTAL_REC"] floatValue] / _rows) ;
+    
     // loop array in result
     for ( NSArray *subList in [result valueForKey:@"RES_DATA"]) {
         Article *article = [[Article alloc]initWithData:subList];
@@ -143,13 +160,23 @@
            [self.refreshControl endRefreshing];
         }
     }
+    
 }
 
+
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (_currentPageNumber == 0) {
+        return 1;
+    }
+    
+    if (_currentPageNumber < _totalPages) {
+        return [self.articleList count] + 1;
+    }
     return [self.articleList count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)beerCellForIndexPath:(NSIndexPath *)indexPath {
     
     // validate if the article has image or not
     if([[[self.articleList objectAtIndex:indexPath.row] imageUrlString] isEqual: @"resources/image/article-image/default.jpg"]){
@@ -162,7 +189,7 @@
         return cell;
     }
     else{
-       
+        
         // Has image
         
         CustomTableViewCell *cell = [_customTableView dequeueReusableCellWithIdentifier:@"cellWithImage" forIndexPath:indexPath];
@@ -180,6 +207,30 @@
         return cell;
     }
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    
+    if (indexPath.row < self.articleList.count) {
+        [self.articleList objectAtIndex:indexPath.row];
+        return [self beerCellForIndexPath:indexPath];
+    }
+    else {
+        return [self loadingCell];
+    }
+    
+}
+
+- (UITableViewCell *)loadingCell {
+    UITableViewCell *cell = [[UITableViewCell alloc]
+                              initWithStyle:UITableViewCellStyleDefault
+                              reuseIdentifier:nil] ;
+    
+    
+    return cell;
+}
+
+
 
 
 // downloading image with GCD
@@ -232,6 +283,32 @@
     }
     
 }
+
+#pragma mark loading indicator at footer
+-(void)initializeRefreshControl
+{
+    indicatorFooter = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.customTableView.frame), 44)];
+    [indicatorFooter setColor:[UIColor blackColor]];
+    [indicatorFooter startAnimating];
+    [self.customTableView setTableFooterView:indicatorFooter];
+}
+
+-(void)refreshTableVeiwList
+{
+    //Code here
+    _currentPageNumber++;
+    [self fetchArticle];
+
+    [self.customTableView setContentOffset:(CGPointMake(0,self.customTableView.contentOffset.y-indicatorFooter.frame.size.height)) animated:YES];
+}
+-(void)scrollViewDidScroll: (UIScrollView*)scrollView
+{
+    if (scrollView.contentOffset.y + scrollView.frame.size.height == scrollView.contentSize.height)
+    {
+        [self refreshTableVeiwList];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

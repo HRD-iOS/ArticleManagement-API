@@ -13,6 +13,7 @@
 		193F32311BF4D6BA00AF5DD1 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193F32301BF4D6BA00AF5DD1 /* ImageViewController.m */; };
 		193F32341BF4DC6F00AF5DD1 /* CustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193F32331BF4DC6F00AF5DD1 /* CustomViewViewController.m */; };
 		193F32371BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193F32361BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.m */; };
+		196DE8921C1483FA007A3A34 /* tab-icon-more.png in Resources */ = {isa = PBXBuildFile; fileRef = 196DE8911C1483FA007A3A34 /* tab-icon-more.png */; };
 		196DE8931C0B3E57007A3A34 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 196DE8921C0B3E57007A3A34 /* Article.m */; };
 		196DE8931C0DFF0F007A3A34 /* password-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 196DE8911C0DFF0F007A3A34 /* password-icon.png */; };
 		196DE8941C0DFF0F007A3A34 /* email-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 196DE8921C0DFF0F007A3A34 /* email-icon.png */; };
@@ -59,6 +60,7 @@
 		193F32361BF4EF7500AF5DD1 /* ArticleDetailsNoImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailsNoImageViewController.m; sourceTree = "<group>"; };
 		196DE8911C0B3E57007A3A34 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		196DE8911C0DFF0F007A3A34 /* password-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password-icon.png"; sourceTree = "<group>"; };
+		196DE8911C1483FA007A3A34 /* tab-icon-more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-icon-more.png"; sourceTree = SOURCE_ROOT; };
 		196DE8921C0B3E57007A3A34 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		196DE8921C0DFF0F007A3A34 /* email-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email-icon.png"; sourceTree = "<group>"; };
 		196DE8951C0E0D3F007A3A34 /* Midnight-Blue-Flat-UI-Color-Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Midnight-Blue-Flat-UI-Color-Background.jpg"; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		9A37D41B1BF42E1B0096DCB4 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				196DE8911C1483FA007A3A34 /* tab-icon-more.png */,
 				196DE8951C0E0D3F007A3A34 /* Midnight-Blue-Flat-UI-Color-Background.jpg */,
 				196DE8911C0DFF0F007A3A34 /* password-icon.png */,
 				196DE8921C0DFF0F007A3A34 /* email-icon.png */,
@@ -310,6 +313,7 @@
 				9A983EAB1BF4222A00515550 /* Main.storyboard in Resources */,
 				9AFB97E51C0D7583002C7768 /* green-line-background.jpg in Resources */,
 				196DE8941C0DFF0F007A3A34 /* email-icon.png in Resources */,
+				196DE8921C1483FA007A3A34 /* tab-icon-more.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
