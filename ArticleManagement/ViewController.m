@@ -17,7 +17,7 @@
 const int kLoadingCellTag = 1273;
 
 @interface ViewController ()<ConnectionManagerDelegate>{
-     UIActivityIndicatorView *indicatorFooter;
+    UIActivityIndicatorView *indicatorFooter;
 }
 #define RIGHT_PANEL_TAG 3
 
@@ -45,6 +45,10 @@ const int kLoadingCellTag = 1273;
     self.customTableView.delegate = self;
     self.customTableView.dataSource = self;
     
+    //set current page n rows
+    _currentPageNumber =1;
+    _rows = 5;
+    
     //init article list
     self.articleList = [[NSMutableArray alloc]init];
     
@@ -55,9 +59,7 @@ const int kLoadingCellTag = 1273;
     [self.customTableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
     
-    
     // call indicator at footer
-    _currentPageNumber =1;
     [self initializeRefreshControl];
     
 }
@@ -80,23 +82,6 @@ const int kLoadingCellTag = 1273;
         
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-    
-}
-
-- (void)fetchArticle {
-    //Create connection manager
-    ConnectionManager *manager = [[ConnectionManager alloc] init];
-    
-    manager.delegate = self;
-    
-    // request dictionary
-    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
-     _rows = 5;
-    [dictionary setObject:[NSString stringWithFormat:@"%d", _rows] forKey:@"row"];
-    [dictionary setObject:[NSString stringWithFormat:@"%d", _currentPageNumber] forKey:@"pageCount"];
-    
-    // send data to server
-    [manager sendTranData:dictionary withKey:@"/api/article/hrd_r001"];
 }
 
 
@@ -119,23 +104,31 @@ const int kLoadingCellTag = 1273;
     dispatch_async(dispatch_get_main_queue(), ^{
         //remove all item from list
         [self.articleList removeAllObjects];
-        
-        //Create connection manager
-        ConnectionManager *manager = [[ConnectionManager alloc] init];
-        
-        manager.delegate = self;
-        
-        // request dictionary
-        NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
-        [dictionary setObject:@"10" forKey:@"row"];
-        [dictionary setObject:@"1" forKey:@"pageCount"];
-        
-        // send data to server
-        [manager sendTranData:dictionary withKey:@"/api/article/hrd_r001"];
-        [self.customTableView reloadData];
+        _currentPageNumber = 1;
+        [self fetchArticle];
+         [self.customTableView reloadData];
     });
-   
+    
 }
+
+#pragma mark:- fetching article from server
+- (void)fetchArticle {
+    //Create connection manager
+    ConnectionManager *manager = [[ConnectionManager alloc] init];
+    
+    manager.delegate = self;
+    
+    // request dictionary
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
+    
+    [dictionary setObject:[NSString stringWithFormat:@"%d", _rows] forKey:@"row"];
+    [dictionary setObject:[NSString stringWithFormat:@"%d", _currentPageNumber] forKey:@"pageCount"];
+    
+    // send data to server
+    [manager sendTranData:dictionary withKey:@"/api/article/hrd_r001"];
+}
+
+
 
 #pragma mark: - UITableViewDataSource
 
@@ -157,27 +150,18 @@ const int kLoadingCellTag = 1273;
             NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
             self.refreshControl.attributedTitle = attributedTitle;
             
-           [self.refreshControl endRefreshing];
+            [self.refreshControl endRefreshing];
         }
     }
     
 }
 
-
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (_currentPageNumber == 0) {
-        return 1;
-    }
-    
-    if (_currentPageNumber < _totalPages) {
-        return [self.articleList count] + 1;
-    }
     return [self.articleList count];
 }
 
-- (UITableViewCell *)beerCellForIndexPath:(NSIndexPath *)indexPath {
-    
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     // validate if the article has image or not
     if([[[self.articleList objectAtIndex:indexPath.row] imageUrlString] isEqual: @"resources/image/article-image/default.jpg"]){
         // No image
@@ -207,30 +191,6 @@ const int kLoadingCellTag = 1273;
         return cell;
     }
 }
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    
-    if (indexPath.row < self.articleList.count) {
-        [self.articleList objectAtIndex:indexPath.row];
-        return [self beerCellForIndexPath:indexPath];
-    }
-    else {
-        return [self loadingCell];
-    }
-    
-}
-
-- (UITableViewCell *)loadingCell {
-    UITableViewCell *cell = [[UITableViewCell alloc]
-                              initWithStyle:UITableViewCellStyleDefault
-                              reuseIdentifier:nil] ;
-    
-    
-    return cell;
-}
-
-
 
 
 // downloading image with GCD
@@ -293,20 +253,26 @@ const int kLoadingCellTag = 1273;
     [self.customTableView setTableFooterView:indicatorFooter];
 }
 
--(void)refreshTableVeiwList
-{
-    //Code here
-    _currentPageNumber++;
-    [self fetchArticle];
-
-    [self.customTableView setContentOffset:(CGPointMake(0,self.customTableView.contentOffset.y-indicatorFooter.frame.size.height)) animated:YES];
-}
 -(void)scrollViewDidScroll: (UIScrollView*)scrollView
 {
     if (scrollView.contentOffset.y + scrollView.frame.size.height == scrollView.contentSize.height)
     {
         [self refreshTableVeiwList];
     }
+}
+
+-(void)refreshTableVeiwList
+{
+    //Code here
+    
+    if(_currentPageNumber >= _totalPages){
+        [indicatorFooter stopAnimating];
+    }else{
+        _currentPageNumber++;
+        [self fetchArticle];
+    }
+    
+    [self.customTableView setContentOffset:(CGPointMake(0,self.customTableView.contentOffset.y-indicatorFooter.frame.size.height)) animated:YES];
 }
 
 
