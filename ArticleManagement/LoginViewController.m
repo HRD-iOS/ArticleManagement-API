@@ -30,7 +30,7 @@
     
 
     
-    // border radius
+    // border line add bottom
     self.textFieldUsername.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.frame = CGRectMake(0.0f, self.textFieldUsername.frame.size.height - 1, self.textFieldUsername.frame.size.width, 1.0f);
@@ -44,6 +44,7 @@
     bottomBorder1.backgroundColor = [UIColor whiteColor].CGColor;
     [self.textFieldPassword.layer addSublayer:bottomBorder1];
     
+    // border radius
     [self.buttonLogin.layer setCornerRadius:self.buttonLogin.bounds.size.height/2];
     self.buttonLogin.clipsToBounds = YES;
     

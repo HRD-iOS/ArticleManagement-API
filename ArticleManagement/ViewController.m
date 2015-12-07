@@ -72,7 +72,7 @@ const int kLoadingCellTag = 1273;
     
     [self fetchArticle];
     
-    [self.customTableView reloadData];
+   // [self.customTableView reloadData];
     
     //Sidebar
     SWRevealViewController *revealViewController = self.revealViewController;
@@ -247,10 +247,13 @@ const int kLoadingCellTag = 1273;
 #pragma mark loading indicator at footer
 -(void)initializeRefreshControl
 {
-    indicatorFooter = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.customTableView.frame), 44)];
-    [indicatorFooter setColor:[UIColor blackColor]];
-    [indicatorFooter startAnimating];
-    [self.customTableView setTableFooterView:indicatorFooter];
+    if (_rows > 3) {
+        indicatorFooter = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.customTableView.frame), 44)];
+        [indicatorFooter setColor:[UIColor blackColor]];
+        [indicatorFooter startAnimating];
+        [self.customTableView setTableFooterView:indicatorFooter];
+    }
+   
 }
 
 -(void)scrollViewDidScroll: (UIScrollView*)scrollView

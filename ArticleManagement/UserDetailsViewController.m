@@ -23,6 +23,11 @@
     self.userDetailTableView.dataSource =self;
     // Do any additional setup after loading the view.
     userDefault = [NSUserDefaults standardUserDefaults];
+    
+    // border radius
+    [self.profileImageView.layer setCornerRadius:self.profileImageView.bounds.size.height/2];
+    self.profileImageView.backgroundColor = [UIColor colorWithRed:(56/255.0) green:(128/255.0) blue:(64/255.0) alpha:1.00];
+    self.profileImageView.clipsToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {

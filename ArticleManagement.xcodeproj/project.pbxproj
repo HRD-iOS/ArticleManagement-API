@@ -33,6 +33,7 @@
 		9A3393DD1C111FAF002E5825 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3393DC1C111FAF002E5825 /* UserDetailsViewController.m */; };
 		9A3393E01C1185AB002E5825 /* EditUserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3393DF1C1185AB002E5825 /* EditUserDetailsViewController.m */; };
 		9A37D41D1BF42E300096DCB4 /* ios_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A37D41C1BF42E300096DCB4 /* ios_logo.png */; };
+		9A3F33851C1512CA00058F95 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A3F33841C1512CA00058F95 /* default.png */; };
 		9A983EA21BF4222A00515550 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A983EA11BF4222A00515550 /* main.m */; };
 		9A983EA51BF4222A00515550 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A983EA41BF4222A00515550 /* AppDelegate.m */; };
 		9A983EA81BF4222A00515550 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A983EA71BF4222A00515550 /* ViewController.m */; };
@@ -86,6 +87,7 @@
 		9A3393DE1C1185AB002E5825 /* EditUserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserDetailsViewController.h; sourceTree = "<group>"; };
 		9A3393DF1C1185AB002E5825 /* EditUserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserDetailsViewController.m; sourceTree = "<group>"; };
 		9A37D41C1BF42E300096DCB4 /* ios_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios_logo.png; sourceTree = "<group>"; };
+		9A3F33841C1512CA00058F95 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		9A983E9D1BF4222A00515550 /* ArticleManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A983EA11BF4222A00515550 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A983EA31BF4222A00515550 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		9A37D41B1BF42E1B0096DCB4 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				9A3F33841C1512CA00058F95 /* default.png */,
 				196DE8911C1483FA007A3A34 /* tab-icon-more.png */,
 				196DE8951C0E0D3F007A3A34 /* Midnight-Blue-Flat-UI-Color-Background.jpg */,
 				196DE8911C0DFF0F007A3A34 /* password-icon.png */,
@@ -308,6 +311,7 @@
 				9A983EAD1BF4222A00515550 /* Assets.xcassets in Resources */,
 				19B21EDB1BF7870400F68A57 /* share.png in Resources */,
 				196DE8961C0E0D3F007A3A34 /* Midnight-Blue-Flat-UI-Color-Background.jpg in Resources */,
+				9A3F33851C1512CA00058F95 /* default.png in Resources */,
 				196DE8931C0DFF0F007A3A34 /* password-icon.png in Resources */,
 				197BC38D1BF70842003B88AE /* article3.jpg in Resources */,
 				9A37D41D1BF42E300096DCB4 /* ios_logo.png in Resources */,
