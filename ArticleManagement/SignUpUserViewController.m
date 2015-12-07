@@ -8,6 +8,7 @@
 
 #import "SignUpUserViewController.h"
 #import "ConnectionManager.h"
+#import  <QuartzCore/QuartzCore.h>
 
 @interface SignUpUserViewController ()<ConnectionManagerDelegate>
 
@@ -18,12 +19,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.profileImageView.image = [UIImage imageNamed:@"default.png"];
     
     // border radius
-    [self.profileImageView.layer setCornerRadius:self.profileImageView.bounds.size.height/2];
-    self.profileImageView.backgroundColor = [UIColor colorWithRed:(56/255.0) green:(128/255.0) blue:(64/255.0) alpha:1.00];
-    self.profileImageView.clipsToBounds = YES;
+    [self.signUpButton.layer setCornerRadius:5];
+    self.signUpButton.clipsToBounds = YES;
+
+    // Add a bottomBorder.
+    CALayer *border = [CALayer layer];
+    border.borderColor = [UIColor colorWithRed:(18/255.0) green:(75/255.0) blue:(39/255.0) alpha:1.00].CGColor;
+    CGFloat borderWidth = 3.0f;
+
+    border.frame = CGRectMake(-borderWidth,self.signUpButton.frame.size.height -borderWidth, self.signUpButton.frame.size.width+borderWidth, borderWidth);
+    
+    border.borderWidth = borderWidth;
+    border.cornerRadius = 8.f;
+    [self.signUpButton.layer addSublayer:border];
+    self.signUpButton.layer.masksToBounds = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
